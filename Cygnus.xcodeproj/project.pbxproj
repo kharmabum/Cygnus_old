@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EDE375315734A1F006F83D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE375215734A1F006F83D2 /* UIKit.framework */; };
+		3EDE375515734A1F006F83D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE375415734A1F006F83D2 /* Foundation.framework */; };
+		3EDE375715734A1F006F83D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE375615734A1F006F83D2 /* CoreGraphics.framework */; };
+		3EDE375D15734A1F006F83D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE375B15734A1F006F83D2 /* InfoPlist.strings */; };
+		3EDE375F15734A1F006F83D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE375E15734A1F006F83D2 /* main.m */; };
+		3EDE376315734A1F006F83D2 /* CygnusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE376215734A1F006F83D2 /* CygnusAppDelegate.m */; };
+		3EDE376615734A1F006F83D2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE376415734A1F006F83D2 /* MainStoryboard.storyboard */; };
+		3EDE376915734A1F006F83D2 /* CygnusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE376815734A1F006F83D2 /* CygnusViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3EDE374E15734A1F006F83D2 /* Cygnus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cygnus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EDE375215734A1F006F83D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3EDE375415734A1F006F83D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3EDE375615734A1F006F83D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3EDE375A15734A1F006F83D2 /* Cygnus-Info.plist */ = {isa = PBXFileReference; path = "Cygnus-Info.plist"; sourceTree = "<group>"; };
+		3EDE375C15734A1F006F83D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3EDE375E15734A1F006F83D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3EDE376015734A1F006F83D2 /* Cygnus-Prefix.pch */ = {isa = PBXFileReference; path = "Cygnus-Prefix.pch"; sourceTree = "<group>"; };
+		3EDE376115734A1F006F83D2 /* CygnusAppDelegate.h */ = {isa = PBXFileReference; path = CygnusAppDelegate.h; sourceTree = "<group>"; };
+		3EDE376215734A1F006F83D2 /* CygnusAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CygnusAppDelegate.m; sourceTree = "<group>"; };
+		3EDE376515734A1F006F83D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		3EDE376715734A1F006F83D2 /* CygnusViewController.h */ = {isa = PBXFileReference; path = CygnusViewController.h; sourceTree = "<group>"; };
+		3EDE376815734A1F006F83D2 /* CygnusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CygnusViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EDE374B15734A1F006F83D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EDE375315734A1F006F83D2 /* UIKit.framework in Frameworks */,
+				3EDE375515734A1F006F83D2 /* Foundation.framework in Frameworks */,
+				3EDE375715734A1F006F83D2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EDE374315734A1E006F83D2 = {
+			isa = PBXGroup;
+			children = (
+				3EDE375815734A1F006F83D2 /* Cygnus */,
+				3EDE375115734A1F006F83D2 /* Frameworks */,
+				3EDE374F15734A1F006F83D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EDE374F15734A1F006F83D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EDE374E15734A1F006F83D2 /* Cygnus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EDE375115734A1F006F83D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EDE375215734A1F006F83D2 /* UIKit.framework */,
+				3EDE375415734A1F006F83D2 /* Foundation.framework */,
+				3EDE375615734A1F006F83D2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EDE375815734A1F006F83D2 /* Cygnus */ = {
+			isa = PBXGroup;
+			children = (
+				3EDE376115734A1F006F83D2 /* CygnusAppDelegate.h */,
+				3EDE376215734A1F006F83D2 /* CygnusAppDelegate.m */,
+				3EDE376415734A1F006F83D2 /* MainStoryboard.storyboard */,
+				3EDE376715734A1F006F83D2 /* CygnusViewController.h */,
+				3EDE376815734A1F006F83D2 /* CygnusViewController.m */,
+				3EDE375915734A1F006F83D2 /* Supporting Files */,
+			);
+			path = Cygnus;
+			sourceTree = "<group>";
+		};
+		3EDE375915734A1F006F83D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EDE375A15734A1F006F83D2 /* Cygnus-Info.plist */,
+				3EDE375B15734A1F006F83D2 /* InfoPlist.strings */,
+				3EDE375E15734A1F006F83D2 /* main.m */,
+				3EDE376015734A1F006F83D2 /* Cygnus-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EDE374D15734A1F006F83D2 /* Cygnus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EDE376C15734A1F006F83D2 /* Build configuration list for PBXNativeTarget "Cygnus" */;
+			buildPhases = (
+				3EDE374A15734A1F006F83D2 /* Sources */,
+				3EDE374B15734A1F006F83D2 /* Frameworks */,
+				3EDE374C15734A1F006F83D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cygnus;
+			productName = Cygnus;
+			productReference = 3EDE374E15734A1F006F83D2 /* Cygnus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EDE374515734A1E006F83D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Cygnus;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 3EDE374815734A1E006F83D2 /* Build configuration list for PBXProject "Cygnus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3EDE374315734A1E006F83D2;
+			productRefGroup = 3EDE374F15734A1F006F83D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EDE374D15734A1F006F83D2 /* Cygnus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EDE374C15734A1F006F83D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EDE375D15734A1F006F83D2 /* InfoPlist.strings in Resources */,
+				3EDE376615734A1F006F83D2 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EDE374A15734A1F006F83D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EDE375F15734A1F006F83D2 /* main.m in Sources */,
+				3EDE376315734A1F006F83D2 /* CygnusAppDelegate.m in Sources */,
+				3EDE376915734A1F006F83D2 /* CygnusViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3EDE375B15734A1F006F83D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EDE375C15734A1F006F83D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3EDE376415734A1F006F83D2 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EDE376515734A1F006F83D2 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EDE376A15734A1F006F83D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3EDE376B15734A1F006F83D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3EDE376D15734A1F006F83D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cygnus/Cygnus-Prefix.pch";
+				INFOPLIST_FILE = "Cygnus/Cygnus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3EDE376E15734A1F006F83D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cygnus/Cygnus-Prefix.pch";
+				INFOPLIST_FILE = "Cygnus/Cygnus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EDE374815734A1E006F83D2 /* Build configuration list for PBXProject "Cygnus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EDE376A15734A1F006F83D2 /* Debug */,
+				3EDE376B15734A1F006F83D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EDE376C15734A1F006F83D2 /* Build configuration list for PBXNativeTarget "Cygnus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EDE376D15734A1F006F83D2 /* Debug */,
+				3EDE376E15734A1F006F83D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EDE374515734A1E006F83D2 /* Project object */;
+}
