@@ -1,26 +1,22 @@
 //
-//  MapPin.m
+//  Event.m
 //  Cygnus
 //
 //  Created by Juan-Carlos Foust on 6/1/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "MapPin.h"
 #import "Event.h"
-#import "Map.h"
+#import "MapPin.h"
 
 
-@implementation MapPin
+@implementation Event
 
+@dynamic name;
 @dynamic expiration;
 @dynamic imgURL;
-@dynamic latitude;
-@dynamic longitude;
-@dynamic location_name;
 @dynamic summary;
 @dynamic uid;
-@dynamic map;
-@dynamic events;
+@dynamic location;
 
 @end

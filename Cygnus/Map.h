@@ -13,9 +13,9 @@
 
 @interface Map : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * primaryMap;
+@property (nonatomic, retain) NSNumber * name;
 @property (nonatomic, retain) NSString * summary;
+@property (nonatomic, retain) NSNumber * uid;
 @property (nonatomic, retain) NSSet *mapPins;
 @end
 

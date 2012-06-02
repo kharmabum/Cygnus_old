@@ -1,5 +1,5 @@
 //
-//  ClientSettings.h
+//  PrivateMap.h
 //  Cygnus
 //
 //  Created by Juan-Carlos Foust on 6/1/12.
@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Person+Cygnus.h"
+#import <CoreData/CoreData.h>
+#import "Map.h"
 
-@interface ClientSettings : NSObject
-+ (Person *)currentUser;
-+ (BOOL)setCurrentUser:(NSString*)email;
+@class Person;
+
+@interface PrivateMap : Map
+
+@property (nonatomic, retain) Person *creator;
 
 @end

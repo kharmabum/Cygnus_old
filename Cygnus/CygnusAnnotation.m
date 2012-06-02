@@ -13,7 +13,7 @@
 
 - (NSString *)title
 {
-return [self.mapPin name];
+return [self.mapPin location_name];
 }
 
 - (NSString *)subtitle
@@ -27,6 +27,18 @@ CLLocationCoordinate2D coordinate;
 coordinate.latitude = [[self.mapPin latitude] floatValue];
 coordinate.longitude = [[self.mapPin longitude] floatValue];
 return coordinate;
+}
+
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate
+{
+    self.mapPin.latitude = [NSNumber numberWithDouble:newCoordinate.latitude];
+    self.mapPin.longitude = [NSNumber numberWithDouble:newCoordinate.longitude];
+}
+
+
+- (BOOL)hasEvent 
+{
+    return [[self.mapPin events] count];
 }
 
 @end

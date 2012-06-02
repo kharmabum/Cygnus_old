@@ -10,7 +10,10 @@
 
 @interface Person (Cygnus)
 
-+ (Person *)personFromPlistData:(NSDictionary*)person inManagedObjectContext:(NSManagedObjectContext*)context;
++ (Person *)personFromPlistData:(NSDictionary*)personInfo inManagedObjectContext:(NSManagedObjectContext*)context;
 
++ (Person *)personFromUID:(NSNumber*)personUID inManagedObjectContext:(NSManagedObjectContext*)context;
+
++ (Person *)personFromEmail:(NSString*)email inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

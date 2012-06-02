@@ -15,6 +15,10 @@
 @dynamic email;
 @dynamic first_name;
 @dynamic last_name;
+@dynamic uid;
+@dynamic latitude;
+@dynamic longitude;
 @dynamic groups;
+@dynamic privateMaps;
 
 @end

@@ -11,6 +11,7 @@
 
 @interface GroupMap (Cygnus)
 
-+ (GroupMap *)groupMapFromPlistData:(NSDictionary*)groupMap inManagedObjectContext:(NSManagedObjectContext*)context;
+//+ (GroupMap *)groupMapFromPlistData:(NSDictionary*)groupMap inManagedObjectContext:(NSManagedObjectContext*)context;
 
++ (GroupMap *)groupMapFromUID:(NSNumber*)mapUID inManagedObjectContext:(NSManagedObjectContext*)context;
 @end

@@ -9,23 +9,24 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class AuxMap, GroupMap, Person;
+@class GroupMap, Person, SharedMap;
 
 @interface Group : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * summary;
-@property (nonatomic, retain) NSSet *auxMaps;
+@property (nonatomic, retain) NSNumber * uid;
+@property (nonatomic, retain) NSSet *sharedMaps;
 @property (nonatomic, retain) GroupMap *groupMap;
 @property (nonatomic, retain) NSSet *members;
 @end
 
 @interface Group (CoreDataGeneratedAccessors)
 
-- (void)addAuxMapsObject:(AuxMap *)value;
-- (void)removeAuxMapsObject:(AuxMap *)value;
-- (void)addAuxMaps:(NSSet *)values;
-- (void)removeAuxMaps:(NSSet *)values;
+- (void)addSharedMapsObject:(SharedMap *)value;
+- (void)removeSharedMapsObject:(SharedMap *)value;
+- (void)addSharedMaps:(NSSet *)values;
+- (void)removeSharedMaps:(NSSet *)values;
 
 - (void)addMembersObject:(Person *)value;
 - (void)removeMembersObject:(Person *)value;

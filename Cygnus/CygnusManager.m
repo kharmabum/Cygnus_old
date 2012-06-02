@@ -29,30 +29,29 @@ static UIManagedDocument*_simulation;
     return _simulation;
 }
 
-
-
 + (void)populateSimulation
 {
     UIManagedDocument *sim = [CygnusManager simulation];
     NSString *simulationModelPath = [[NSBundle mainBundle] pathForResource:@"Simulation" ofType:@"plist"];
         
     NSDictionary *rootDict = [[NSDictionary alloc] initWithContentsOfFile:simulationModelPath];
-    
-    NSArray *mapPins = [rootDict valueForKey:@"MapPins"];
+
     NSArray *people = [rootDict valueForKey:@"People"];
     NSArray *maps = [rootDict valueForKey:@"Maps"];
     NSArray *groups = [rootDict valueForKey:@"Groups"];
+
+    NSLog(@"POPULATING SIMULATION");
+
+    NSLog(@"People.count - %@", people.count);
+    NSLog(@"Maps.count - %@", maps.count);
+    NSLog(@"Groups.count - %@",groups.count);
     
-    for (NSDictionary *pin in mapPins) {
-        [MapPin mapPinFromPlistData:pin inManagedObjectContext:sim.managedObjectContext];
+    for (NSDictionary *map in maps) {
+        [Map mapFromPlistData:map inManagedObjectContext:sim.managedObjectContext];
     }
     
     for (NSDictionary *person in people) {
         [Person personFromPlistData:person inManagedObjectContext:sim.managedObjectContext];
-    }
-    
-    for (NSDictionary *map in maps) {
-        [Map mapFromPlistData:map inManagedObjectContext:sim.managedObjectContext];
     }
     
     for (NSDictionary *group in groups) {
@@ -61,21 +60,18 @@ static UIManagedDocument*_simulation;
 }
 
 
-
-
 + (void)loadSimulation 
 {
-    NSError *err;
+    //NSError *err;
     NSFileManager *fm = [NSFileManager defaultManager];
     
     NSURL *simURL = [CygnusManager simulationDirectoryURL];
-    [fm createDirectoryAtPath:[simURL path] withIntermediateDirectories:YES attributes:nil error:&err];
-    NSArray *simulationFiles = [fm contentsOfDirectoryAtPath:[simURL path]error:&err];
+    //BOOL createSuccess = [fm createDirectoryAtPath:[simURL path] withIntermediateDirectories:YES attributes:nil error:&err];
+    //if (!createSuccess) NSLog(@"Could not create directory");
     _simulation = [[UIManagedDocument alloc] initWithFileURL:simURL];
     
     BOOL __block documentReady = NO;
-    if (simulationFiles.count) {
-        if ([fm fileExistsAtPath:[_simulation.fileURL path]]) {
+    if ([fm fileExistsAtPath:[_simulation.fileURL path]]) {
             [_simulation openWithCompletionHandler:^(BOOL success) {
                 if (success) {
                     documentReady=YES;
@@ -83,11 +79,11 @@ static UIManagedDocument*_simulation;
                     NSLog(@"Failed to open %@",_simulation.fileURL);           
                 }
             }]; 
-        }
     } else {
         [_simulation saveToURL:_simulation.fileURL forSaveOperation:UIDocumentSaveForCreating
              completionHandler:^(BOOL success) {
                  if (success) {
+                     NSLog(@"Document created at %@", _simulation.fileURL);
                      [CygnusManager populateSimulation];
                      documentReady=YES;
                  } else{
@@ -102,5 +98,26 @@ static UIManagedDocument*_simulation;
     
 }
 
++ (NSArray*)mapPinsForClient
+{
+    NSManagedObjectContext *context = [[CygnusManager simulation] managedObjectContext]; 
+    NSArray *matches = nil;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"MapPin"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"location_name" ascending:YES]];
+    
+    //TODO
+    //get USER settings on which maps to query and formulate predicate
+    //request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", [pinInfo objectForKey:@"uid"]];
+    request.predicate = nil;
+    
+    NSError *error;
+    matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ![matches count]) {
+        // handle error
+    }
+    return matches;
+}
 
 @end

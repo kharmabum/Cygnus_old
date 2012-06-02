@@ -1,20 +1,13 @@
 //
-//  Map.m
+//  CygnusMapPinAnnotationView.h
 //  Cygnus
 //
 //  Created by Juan-Carlos Foust on 6/1/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Map.h"
-#import "MapPin.h"
+#import <MapKit/MapKit.h>
 
-
-@implementation Map
-
-@dynamic name;
-@dynamic summary;
-@dynamic uid;
-@dynamic mapPins;
+@interface CygnusMapPinAnnotationView : MKPinAnnotationView
 
 @end

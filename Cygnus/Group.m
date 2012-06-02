@@ -7,16 +7,17 @@
 //
 
 #import "Group.h"
-#import "AuxMap.h"
 #import "GroupMap.h"
 #import "Person.h"
+#import "SharedMap.h"
 
 
 @implementation Group
 
 @dynamic name;
 @dynamic summary;
-@dynamic auxMaps;
+@dynamic uid;
+@dynamic sharedMaps;
 @dynamic groupMap;
 @dynamic members;
 

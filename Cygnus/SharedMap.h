@@ -1,5 +1,5 @@
 //
-//  AuxMap.h
+//  SharedMap.h
 //  Cygnus
 //
 //  Created by Juan-Carlos Foust on 6/1/12.
@@ -12,7 +12,7 @@
 
 @class Group;
 
-@interface AuxMap : Map
+@interface SharedMap : Map
 
 @property (nonatomic, retain) Group *group;
 

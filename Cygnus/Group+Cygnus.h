@@ -10,7 +10,7 @@
 
 @interface Group (Cygnus)
 
-+ (Group *)groupFromPlistData:(NSDictionary*)group inManagedObjectContext:(NSManagedObjectContext*)context;
++ (Group *)groupFromPlistData:(NSDictionary*)groupInfo inManagedObjectContext:(NSManagedObjectContext*)context;
 
 
 @end

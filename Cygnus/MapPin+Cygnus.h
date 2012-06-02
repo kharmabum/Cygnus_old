@@ -10,7 +10,6 @@
 
 @interface MapPin (Cygnus)
 
-+ (MapPin *)mapPinFromPlistData:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
-
++ (MapPin *)mapPinFromPlistData:(NSDictionary*)pinInfo inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

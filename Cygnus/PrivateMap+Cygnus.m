@@ -1,22 +1,21 @@
 //
-//  GroupMap+Cygnus.m
+//  PrivateMap+Cygnus.m
 //  Cygnus
 //
 //  Created by Juan-Carlos Foust on 6/1/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "GroupMap+Cygnus.h"
+#import "PrivateMap+Cygnus.h"
 
-@implementation GroupMap (Cygnus)
+@implementation PrivateMap (Cygnus)
 
-
-+ (GroupMap *)groupMapFromUID:(NSNumber*)mapUID inManagedObjectContext:(NSManagedObjectContext*)context
++ (PrivateMap *)privateMapFromUID:(NSNumber*)mapUID inManagedObjectContext:(NSManagedObjectContext*)context
 {
     
-    GroupMap *map = nil;
+    PrivateMap *map = nil;
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"GroupMap"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PrivateMap"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", [mapUID intValue]];
     NSError *error;

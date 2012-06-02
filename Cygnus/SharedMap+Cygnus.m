@@ -1,22 +1,20 @@
 //
-//  GroupMap+Cygnus.m
+//  SharedMap+Cygnus.m
 //  Cygnus
 //
 //  Created by Juan-Carlos Foust on 6/1/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "GroupMap+Cygnus.h"
+#import "SharedMap+Cygnus.h"
 
-@implementation GroupMap (Cygnus)
+@implementation SharedMap (Cygnus)
 
-
-+ (GroupMap *)groupMapFromUID:(NSNumber*)mapUID inManagedObjectContext:(NSManagedObjectContext*)context
++ (SharedMap *)sharedMapFromUID:(NSNumber*)mapUID inManagedObjectContext:(NSManagedObjectContext*)context
 {
+    SharedMap *map = nil;
     
-    GroupMap *map = nil;
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"GroupMap"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SharedMap"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", [mapUID intValue]];
     NSError *error;
@@ -30,5 +28,6 @@
     return map;
     
 }
+
 
 @end

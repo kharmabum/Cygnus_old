@@ -12,4 +12,7 @@
 
 @interface CygnusAnnotation : NSObject <MKAnnotation>
 @property (nonatomic, strong) MapPin *mapPin;
+
+- (BOOL)hasEvent;
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 @end

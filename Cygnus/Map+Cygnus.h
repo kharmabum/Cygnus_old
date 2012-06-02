@@ -10,6 +10,6 @@
 
 @interface Map (Cygnus)
 
-+ (Map *)mapFromPlistData:(NSDictionary*)map inManagedObjectContext:(NSManagedObjectContext*)context;
++ (Map *)mapFromPlistData:(NSDictionary*)mapInfo inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

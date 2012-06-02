@@ -16,7 +16,11 @@
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * first_name;
 @property (nonatomic, retain) NSString * last_name;
+@property (nonatomic, retain) NSNumber * uid;
+@property (nonatomic, retain) NSNumber * latitude;
+@property (nonatomic, retain) NSNumber * longitude;
 @property (nonatomic, retain) NSSet *groups;
+@property (nonatomic, retain) NSSet *privateMaps;
 @end
 
 @interface Person (CoreDataGeneratedAccessors)
@@ -25,5 +29,10 @@
 - (void)removeGroupsObject:(Group *)value;
 - (void)addGroups:(NSSet *)values;
 - (void)removeGroups:(NSSet *)values;
+
+- (void)addPrivateMapsObject:(NSManagedObject *)value;
+- (void)removePrivateMapsObject:(NSManagedObject *)value;
+- (void)addPrivateMaps:(NSSet *)values;
+- (void)removePrivateMaps:(NSSet *)values;
 
 @end
