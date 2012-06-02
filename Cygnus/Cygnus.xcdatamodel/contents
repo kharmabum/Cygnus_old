@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AuxMap" representedClassName="AuxMap" parentEntity="Map" syncable="YES">
+        <relationship name="group" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="auxMaps" inverseEntity="Group" syncable="YES"/>
+    </entity>
+    <entity name="Group" representedClassName="Group" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="auxMaps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AuxMap" inverseName="group" inverseEntity="AuxMap" syncable="YES"/>
+        <relationship name="groupMap" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GroupMap" inverseName="group" inverseEntity="GroupMap" syncable="YES"/>
+        <relationship name="members" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="groups" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="GroupMap" representedClassName="GroupMap" parentEntity="Map" syncable="YES">
+        <relationship name="group" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="groupMap" inverseEntity="Group" syncable="YES"/>
+    </entity>
+    <entity name="Map" representedClassName="Map" isAbstract="YES" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" syncable="YES"/>
+        <relationship name="mapPins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MapPin" inverseName="map" inverseEntity="MapPin" syncable="YES"/>
+    </entity>
+    <entity name="MapPin" representedClassName="MapPin" syncable="YES">
+        <attribute name="event" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="expiration" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="imgURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="map" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Map" inverseName="mapPins" inverseEntity="Map" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="groups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Group" inverseName="members" inverseEntity="Group" syncable="YES"/>
+        <relationship name="privateMaps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PrivateMap" inverseName="creator" inverseEntity="PrivateMap" syncable="YES"/>
+    </entity>
+    <entity name="PrivateMap" parentEntity="Map" syncable="YES">
+        <relationship name="creator" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="privateMaps" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AuxMap" positionX="225" positionY="387" width="128" height="90"/>
+        <element name="Group" positionX="-29" positionY="45" width="128" height="120"/>
+        <element name="GroupMap" positionX="412" positionY="267" width="128" height="75"/>
+        <element name="Map" positionX="279" positionY="-0" width="128" height="120"/>
+        <element name="MapPin" positionX="520" positionY="3" width="128" height="180"/>
+        <element name="Person" positionX="-27" positionY="246" width="128" height="105"/>
+        <element name="PrivateMap" positionX="279" positionY="477" width="128" height="60"/>
+    </elements>
+</model>

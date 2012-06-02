@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E232B8E1578A32F00AE01D7 /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B8D1578A32F00AE01D7 /* 73-radar.png */; };
+		3E232B901578A33E00AE01D7 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B8F1578A33E00AE01D7 /* 74-location.png */; };
+		3E232B921578A35900AE01D7 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B911578A35900AE01D7 /* 103-map.png */; };
+		3E232B941578A36600AE01D7 /* 106-sliders.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B931578A36600AE01D7 /* 106-sliders.png */; };
+		3E232B961578A3C100AE01D7 /* 196-radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B951578A3C100AE01D7 /* 196-radiation.png */; };
+		3E232B981578A3C700AE01D7 /* 193-location-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B971578A3C700AE01D7 /* 193-location-arrow.png */; };
+		3E232B9A1578A40800AE01D7 /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B991578A40800AE01D7 /* 06-magnify.png */; };
+		3E232B9D1578A4C100AE01D7 /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B9C1578A4C100AE01D7 /* 179-notepad.png */; };
+		3E232BA01578A72300AE01D7 /* Console_MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E232B9F1578A72300AE01D7 /* Console_MapVC.m */; };
+		3E232BA71578A90E00AE01D7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E232BA61578A90E00AE01D7 /* CoreLocation.framework */; };
+		3E232BB315795CCB00AE01D7 /* CygnusAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E232BB215795CCB00AE01D7 /* CygnusAnnotation.m */; };
+		3E232BE4157961A200AE01D7 /* ClientSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E232BE3157961A200AE01D7 /* ClientSettings.m */; };
+		3E232BE71579637600AE01D7 /* CygnusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E232BE61579637600AE01D7 /* CygnusManager.m */; };
+		3E232BF915796E3000AE01D7 /* Simulation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E232BF815796E3000AE01D7 /* Simulation.plist */; };
+		3E232BFB157974A100AE01D7 /* Cygnus.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3E232BFA157974A100AE01D7 /* Cygnus.xcdatamodel */; };
+		3EC8C4C41579806E006BB8CF /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4C31579806E006BB8CF /* Group.m */; };
+		3EC8C4C71579806E006BB8CF /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4C61579806E006BB8CF /* Map.m */; };
+		3EC8C4CA1579806E006BB8CF /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4C91579806E006BB8CF /* MapPin.m */; };
+		3EC8C4CD1579806E006BB8CF /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4CC1579806E006BB8CF /* Person.m */; };
+		3EC8C4D615798086006BB8CF /* GroupMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4D515798086006BB8CF /* GroupMap.m */; };
+		3EC8C4D915798086006BB8CF /* AuxMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4D815798086006BB8CF /* AuxMap.m */; };
+		3EC8C4DC1579850E006BB8CF /* Map+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4DB1579850E006BB8CF /* Map+Cygnus.m */; };
+		3EC8C4DF15798526006BB8CF /* GroupMap+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4DE15798526006BB8CF /* GroupMap+Cygnus.m */; };
+		3EC8C4E215798538006BB8CF /* AuxMap+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4E115798537006BB8CF /* AuxMap+Cygnus.m */; };
+		3EC8C4E515798543006BB8CF /* Person+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4E415798543006BB8CF /* Person+Cygnus.m */; };
+		3EC8C4E815798550006BB8CF /* MapPin+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4E715798550006BB8CF /* MapPin+Cygnus.m */; };
+		3EC8C4EB1579855B006BB8CF /* Group+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4EA1579855B006BB8CF /* Group+Cygnus.m */; };
 		3EDE375315734A1F006F83D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE375215734A1F006F83D2 /* UIKit.framework */; };
 		3EDE375515734A1F006F83D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE375415734A1F006F83D2 /* Foundation.framework */; };
 		3EDE375715734A1F006F83D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE375615734A1F006F83D2 /* CoreGraphics.framework */; };
@@ -14,23 +41,67 @@
 		3EDE375F15734A1F006F83D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE375E15734A1F006F83D2 /* main.m */; };
 		3EDE376315734A1F006F83D2 /* CygnusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE376215734A1F006F83D2 /* CygnusAppDelegate.m */; };
 		3EDE376615734A1F006F83D2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE376415734A1F006F83D2 /* MainStoryboard.storyboard */; };
-		3EDE376915734A1F006F83D2 /* CygnusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE376815734A1F006F83D2 /* CygnusViewController.m */; };
+		3EDE377015734B46006F83D2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE376F15734B46006F83D2 /* MapKit.framework */; };
+		3EDE377215734B4E006F83D2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE377115734B4E006F83D2 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E232B8D1578A32F00AE01D7 /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
+		3E232B8F1578A33E00AE01D7 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
+		3E232B911578A35900AE01D7 /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
+		3E232B931578A36600AE01D7 /* 106-sliders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "106-sliders.png"; sourceTree = "<group>"; };
+		3E232B951578A3C100AE01D7 /* 196-radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "196-radiation.png"; sourceTree = "<group>"; };
+		3E232B971578A3C700AE01D7 /* 193-location-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "193-location-arrow.png"; sourceTree = "<group>"; };
+		3E232B991578A40800AE01D7 /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
+		3E232B9C1578A4C100AE01D7 /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
+		3E232B9E1578A72300AE01D7 /* Console_MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Console_MapVC.h; sourceTree = "<group>"; };
+		3E232B9F1578A72300AE01D7 /* Console_MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Console_MapVC.m; sourceTree = "<group>"; };
+		3E232BA61578A90E00AE01D7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3E232BB115795CCB00AE01D7 /* CygnusAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CygnusAnnotation.h; sourceTree = "<group>"; };
+		3E232BB215795CCB00AE01D7 /* CygnusAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CygnusAnnotation.m; sourceTree = "<group>"; };
+		3E232BE2157961A200AE01D7 /* ClientSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientSettings.h; sourceTree = "<group>"; };
+		3E232BE3157961A200AE01D7 /* ClientSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientSettings.m; sourceTree = "<group>"; };
+		3E232BE51579637600AE01D7 /* CygnusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CygnusManager.h; sourceTree = "<group>"; };
+		3E232BE61579637600AE01D7 /* CygnusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CygnusManager.m; sourceTree = "<group>"; };
+		3E232BF815796E3000AE01D7 /* Simulation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Simulation.plist; sourceTree = "<group>"; };
+		3E232BFA157974A100AE01D7 /* Cygnus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cygnus.xcdatamodel; sourceTree = "<group>"; };
+		3EC8C4C21579806E006BB8CF /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		3EC8C4C31579806E006BB8CF /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		3EC8C4C51579806E006BB8CF /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		3EC8C4C61579806E006BB8CF /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		3EC8C4C81579806E006BB8CF /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		3EC8C4C91579806E006BB8CF /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
+		3EC8C4CB1579806E006BB8CF /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		3EC8C4CC1579806E006BB8CF /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		3EC8C4D415798086006BB8CF /* GroupMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMap.h; sourceTree = "<group>"; };
+		3EC8C4D515798086006BB8CF /* GroupMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMap.m; sourceTree = "<group>"; };
+		3EC8C4D715798086006BB8CF /* AuxMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuxMap.h; sourceTree = "<group>"; };
+		3EC8C4D815798086006BB8CF /* AuxMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuxMap.m; sourceTree = "<group>"; };
+		3EC8C4DA1579850E006BB8CF /* Map+Cygnus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Map+Cygnus.h"; sourceTree = "<group>"; };
+		3EC8C4DB1579850E006BB8CF /* Map+Cygnus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Map+Cygnus.m"; sourceTree = "<group>"; };
+		3EC8C4DD15798526006BB8CF /* GroupMap+Cygnus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GroupMap+Cygnus.h"; sourceTree = "<group>"; };
+		3EC8C4DE15798526006BB8CF /* GroupMap+Cygnus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GroupMap+Cygnus.m"; sourceTree = "<group>"; };
+		3EC8C4E015798537006BB8CF /* AuxMap+Cygnus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AuxMap+Cygnus.h"; sourceTree = "<group>"; };
+		3EC8C4E115798537006BB8CF /* AuxMap+Cygnus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AuxMap+Cygnus.m"; sourceTree = "<group>"; };
+		3EC8C4E315798543006BB8CF /* Person+Cygnus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+Cygnus.h"; sourceTree = "<group>"; };
+		3EC8C4E415798543006BB8CF /* Person+Cygnus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+Cygnus.m"; sourceTree = "<group>"; };
+		3EC8C4E615798550006BB8CF /* MapPin+Cygnus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapPin+Cygnus.h"; sourceTree = "<group>"; };
+		3EC8C4E715798550006BB8CF /* MapPin+Cygnus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapPin+Cygnus.m"; sourceTree = "<group>"; };
+		3EC8C4E91579855B006BB8CF /* Group+Cygnus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Group+Cygnus.h"; sourceTree = "<group>"; };
+		3EC8C4EA1579855B006BB8CF /* Group+Cygnus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+Cygnus.m"; sourceTree = "<group>"; };
 		3EDE374E15734A1F006F83D2 /* Cygnus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cygnus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDE375215734A1F006F83D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3EDE375415734A1F006F83D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3EDE375615734A1F006F83D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3EDE375A15734A1F006F83D2 /* Cygnus-Info.plist */ = {isa = PBXFileReference; path = "Cygnus-Info.plist"; sourceTree = "<group>"; };
+		3EDE375A15734A1F006F83D2 /* Cygnus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cygnus-Info.plist"; sourceTree = "<group>"; };
 		3EDE375C15734A1F006F83D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EDE375E15734A1F006F83D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3EDE376015734A1F006F83D2 /* Cygnus-Prefix.pch */ = {isa = PBXFileReference; path = "Cygnus-Prefix.pch"; sourceTree = "<group>"; };
-		3EDE376115734A1F006F83D2 /* CygnusAppDelegate.h */ = {isa = PBXFileReference; path = CygnusAppDelegate.h; sourceTree = "<group>"; };
+		3EDE376015734A1F006F83D2 /* Cygnus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cygnus-Prefix.pch"; sourceTree = "<group>"; };
+		3EDE376115734A1F006F83D2 /* CygnusAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CygnusAppDelegate.h; sourceTree = "<group>"; };
 		3EDE376215734A1F006F83D2 /* CygnusAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CygnusAppDelegate.m; sourceTree = "<group>"; };
 		3EDE376515734A1F006F83D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		3EDE376715734A1F006F83D2 /* CygnusViewController.h */ = {isa = PBXFileReference; path = CygnusViewController.h; sourceTree = "<group>"; };
-		3EDE376815734A1F006F83D2 /* CygnusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CygnusViewController.m; sourceTree = "<group>"; };
+		3EDE376F15734B46006F83D2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3EDE377115734B4E006F83D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E232BA71578A90E00AE01D7 /* CoreLocation.framework in Frameworks */,
+				3EDE377215734B4E006F83D2 /* CoreData.framework in Frameworks */,
+				3EDE377015734B46006F83D2 /* MapKit.framework in Frameworks */,
 				3EDE375315734A1F006F83D2 /* UIKit.framework in Frameworks */,
 				3EDE375515734A1F006F83D2 /* Foundation.framework in Frameworks */,
 				3EDE375715734A1F006F83D2 /* CoreGraphics.framework in Frameworks */,
@@ -47,9 +121,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E232B9B1578A41400AE01D7 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				3E232B9C1578A4C100AE01D7 /* 179-notepad.png */,
+				3E232B991578A40800AE01D7 /* 06-magnify.png */,
+				3E232B971578A3C700AE01D7 /* 193-location-arrow.png */,
+				3E232B951578A3C100AE01D7 /* 196-radiation.png */,
+				3E232B931578A36600AE01D7 /* 106-sliders.png */,
+				3E232B911578A35900AE01D7 /* 103-map.png */,
+				3E232B8D1578A32F00AE01D7 /* 73-radar.png */,
+				3E232B8F1578A33E00AE01D7 /* 74-location.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		3E232BA41578A7A700AE01D7 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E232BFA157974A100AE01D7 /* Cygnus.xcdatamodel */,
+				3EC8C4DA1579850E006BB8CF /* Map+Cygnus.h */,
+				3EC8C4DB1579850E006BB8CF /* Map+Cygnus.m */,
+				3EC8C4DD15798526006BB8CF /* GroupMap+Cygnus.h */,
+				3EC8C4DE15798526006BB8CF /* GroupMap+Cygnus.m */,
+				3EC8C4E015798537006BB8CF /* AuxMap+Cygnus.h */,
+				3EC8C4E115798537006BB8CF /* AuxMap+Cygnus.m */,
+				3EC8C4E315798543006BB8CF /* Person+Cygnus.h */,
+				3EC8C4E415798543006BB8CF /* Person+Cygnus.m */,
+				3EC8C4E615798550006BB8CF /* MapPin+Cygnus.h */,
+				3EC8C4E715798550006BB8CF /* MapPin+Cygnus.m */,
+				3EC8C4E91579855B006BB8CF /* Group+Cygnus.h */,
+				3EC8C4EA1579855B006BB8CF /* Group+Cygnus.m */,
+				3E232BE115795E0100AE01D7 /* NSManaged Objects */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		3E232BA51578A7C300AE01D7 /* Console */ = {
+			isa = PBXGroup;
+			children = (
+				3E232B9E1578A72300AE01D7 /* Console_MapVC.h */,
+				3E232B9F1578A72300AE01D7 /* Console_MapVC.m */,
+				3E232BB115795CCB00AE01D7 /* CygnusAnnotation.h */,
+				3E232BB215795CCB00AE01D7 /* CygnusAnnotation.m */,
+			);
+			name = Console;
+			sourceTree = "<group>";
+		};
+		3E232BE115795E0100AE01D7 /* NSManaged Objects */ = {
+			isa = PBXGroup;
+			children = (
+				3EC8C4C51579806E006BB8CF /* Map.h */,
+				3EC8C4C61579806E006BB8CF /* Map.m */,
+				3EC8C4D415798086006BB8CF /* GroupMap.h */,
+				3EC8C4D515798086006BB8CF /* GroupMap.m */,
+				3EC8C4D715798086006BB8CF /* AuxMap.h */,
+				3EC8C4D815798086006BB8CF /* AuxMap.m */,
+				3EC8C4CB1579806E006BB8CF /* Person.h */,
+				3EC8C4CC1579806E006BB8CF /* Person.m */,
+				3EC8C4C81579806E006BB8CF /* MapPin.h */,
+				3EC8C4C91579806E006BB8CF /* MapPin.m */,
+				3EC8C4C21579806E006BB8CF /* Group.h */,
+				3EC8C4C31579806E006BB8CF /* Group.m */,
+			);
+			name = "NSManaged Objects";
+			sourceTree = "<group>";
+		};
 		3EDE374315734A1E006F83D2 = {
 			isa = PBXGroup;
 			children = (
+				3E232BA61578A90E00AE01D7 /* CoreLocation.framework */,
+				3EDE377115734B4E006F83D2 /* CoreData.framework */,
+				3EDE376F15734B46006F83D2 /* MapKit.framework */,
 				3EDE375815734A1F006F83D2 /* Cygnus */,
 				3EDE375115734A1F006F83D2 /* Frameworks */,
 				3EDE374F15734A1F006F83D2 /* Products */,
@@ -77,11 +220,13 @@
 		3EDE375815734A1F006F83D2 /* Cygnus */ = {
 			isa = PBXGroup;
 			children = (
-				3EDE376115734A1F006F83D2 /* CygnusAppDelegate.h */,
-				3EDE376215734A1F006F83D2 /* CygnusAppDelegate.m */,
 				3EDE376415734A1F006F83D2 /* MainStoryboard.storyboard */,
-				3EDE376715734A1F006F83D2 /* CygnusViewController.h */,
-				3EDE376815734A1F006F83D2 /* CygnusViewController.m */,
+				3E232BE2157961A200AE01D7 /* ClientSettings.h */,
+				3E232BE3157961A200AE01D7 /* ClientSettings.m */,
+				3E232BE51579637600AE01D7 /* CygnusManager.h */,
+				3E232BE61579637600AE01D7 /* CygnusManager.m */,
+				3E232BA51578A7C300AE01D7 /* Console */,
+				3E232BA41578A7A700AE01D7 /* Data Model */,
 				3EDE375915734A1F006F83D2 /* Supporting Files */,
 			);
 			path = Cygnus;
@@ -90,10 +235,14 @@
 		3EDE375915734A1F006F83D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3E232BF815796E3000AE01D7 /* Simulation.plist */,
+				3EDE376115734A1F006F83D2 /* CygnusAppDelegate.h */,
+				3EDE376215734A1F006F83D2 /* CygnusAppDelegate.m */,
 				3EDE375A15734A1F006F83D2 /* Cygnus-Info.plist */,
 				3EDE375B15734A1F006F83D2 /* InfoPlist.strings */,
 				3EDE375E15734A1F006F83D2 /* main.m */,
 				3EDE376015734A1F006F83D2 /* Cygnus-Prefix.pch */,
+				3E232B9B1578A41400AE01D7 /* Icons */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -151,6 +300,15 @@
 			files = (
 				3EDE375D15734A1F006F83D2 /* InfoPlist.strings in Resources */,
 				3EDE376615734A1F006F83D2 /* MainStoryboard.storyboard in Resources */,
+				3E232B8E1578A32F00AE01D7 /* 73-radar.png in Resources */,
+				3E232B901578A33E00AE01D7 /* 74-location.png in Resources */,
+				3E232B921578A35900AE01D7 /* 103-map.png in Resources */,
+				3E232B941578A36600AE01D7 /* 106-sliders.png in Resources */,
+				3E232B961578A3C100AE01D7 /* 196-radiation.png in Resources */,
+				3E232B981578A3C700AE01D7 /* 193-location-arrow.png in Resources */,
+				3E232B9A1578A40800AE01D7 /* 06-magnify.png in Resources */,
+				3E232B9D1578A4C100AE01D7 /* 179-notepad.png in Resources */,
+				3E232BF915796E3000AE01D7 /* Simulation.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +321,23 @@
 			files = (
 				3EDE375F15734A1F006F83D2 /* main.m in Sources */,
 				3EDE376315734A1F006F83D2 /* CygnusAppDelegate.m in Sources */,
-				3EDE376915734A1F006F83D2 /* CygnusViewController.m in Sources */,
+				3E232BA01578A72300AE01D7 /* Console_MapVC.m in Sources */,
+				3E232BB315795CCB00AE01D7 /* CygnusAnnotation.m in Sources */,
+				3E232BE4157961A200AE01D7 /* ClientSettings.m in Sources */,
+				3E232BE71579637600AE01D7 /* CygnusManager.m in Sources */,
+				3E232BFB157974A100AE01D7 /* Cygnus.xcdatamodel in Sources */,
+				3EC8C4C41579806E006BB8CF /* Group.m in Sources */,
+				3EC8C4C71579806E006BB8CF /* Map.m in Sources */,
+				3EC8C4CA1579806E006BB8CF /* MapPin.m in Sources */,
+				3EC8C4CD1579806E006BB8CF /* Person.m in Sources */,
+				3EC8C4D615798086006BB8CF /* GroupMap.m in Sources */,
+				3EC8C4D915798086006BB8CF /* AuxMap.m in Sources */,
+				3EC8C4DC1579850E006BB8CF /* Map+Cygnus.m in Sources */,
+				3EC8C4DF15798526006BB8CF /* GroupMap+Cygnus.m in Sources */,
+				3EC8C4E215798538006BB8CF /* AuxMap+Cygnus.m in Sources */,
+				3EC8C4E515798543006BB8CF /* Person+Cygnus.m in Sources */,
+				3EC8C4E815798550006BB8CF /* MapPin+Cygnus.m in Sources */,
+				3EC8C4EB1579855B006BB8CF /* Group+Cygnus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +449,7 @@
 				3EDE376E15734A1F006F83D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 //
 
 #import "CygnusAppDelegate.h"
+#import "CygnusManager.h"
 
 @implementation CygnusAppDelegate
 
@@ -15,6 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [CygnusManager loadSimulation];
     return YES;
 }
 							

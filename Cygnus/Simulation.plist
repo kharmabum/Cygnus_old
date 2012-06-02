@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>root</key>
+	<dict>
+		<key>MapPins</key>
+		<array>
+			<dict>
+				<key>uid</key>
+				<integer>0</integer>
+				<key>event</key>
+				<false/>
+				<key>expiration</key>
+				<date>1991-06-07T10:00:00Z</date>
+				<key>imgURL</key>
+				<string>https://lh6.googleusercontent.com/-3PZg6SWxTkY/TjgqYAlZbCI/AAAAAAAAy9Y/0VGPEOWnqlw/s250-c-k/30042010%2B040.JPG</string>
+				<key>longitude</key>
+				<real>-122.1793</real>
+				<key>name</key>
+				<string>The Farm</string>
+				<key>latitude</key>
+				<real>37.42477</real>
+				<key>summary</key>
+				<string>Stanford University</string>
+				<key>map</key>
+				<string>Public</string>
+			</dict>
+		</array>
+		<key>People</key>
+		<array>
+			<dict>
+				<key>uid</key>
+				<integer>0</integer>
+				<key>first_name</key>
+				<string>JC</string>
+				<key>last_name</key>
+				<string>Penny</string>
+				<key>email</key>
+				<string>foustjc@gmail.com</string>
+				<key>groups</key>
+				<string>Public</string>
+			</dict>
+			<dict>
+				<key>first_name</key>
+				<string>Adam</string>
+				<key>last_name</key>
+				<string>Rothman</string>
+				<key>email</key>
+				<string>rothman.adam@gmail.com</string>
+				<key>groups</key>
+				<string>Public</string>
+				<key>uid</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>Maps</key>
+		<array>
+			<dict>
+				<key>uid</key>
+				<integer>0</integer>
+				<key>mapType</key>
+				<integer>0</integer>
+				<key>name</key>
+				<string>Public</string>
+				<key>summary</key>
+				<string>Open to everyone.</string>
+			</dict>
+		</array>
+		<key>Groups</key>
+		<array>
+			<dict>
+				<key>uid</key>
+				<integer>0</integer>
+				<key>name</key>
+				<string>Public</string>
+				<key>summary</key>
+				<string>Open to everyone.</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>
