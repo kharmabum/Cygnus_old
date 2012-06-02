@@ -41,7 +41,7 @@
             [group addSharedMapsObject:sharedMap];
         }
         
-        NSLog(@"Group sucessfully created");
+       // NSLog(@"Group sucessfully created");
 
         
     } else {

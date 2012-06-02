@@ -40,6 +40,8 @@
     
     if (!matches || ([matches count] > 1)) {
         // handle error
+        NSLog(@"Error creating map");
+
     } else if (![matches count]) {
         map = [NSEntityDescription insertNewObjectForEntityForName:mapType inManagedObjectContext:context];
         map.uid = [mapInfo objectForKey:@"uid"];
@@ -51,7 +53,7 @@
             MapPin *mapPin = [MapPin mapPinFromPlistData:pin inManagedObjectContext:context];
             [map addMapPinsObject:mapPin];
         }
-        NSLog(@"Map sucessfully created");
+        //NSLog(@"Map sucessfully created");
     } else {
         map = [matches lastObject];
     }

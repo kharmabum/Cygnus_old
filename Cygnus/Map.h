@@ -2,7 +2,7 @@
 //  Map.h
 //  Cygnus
 //
-//  Created by Juan-Carlos Foust on 6/1/12.
+//  Created by Juan-Carlos Foust on 6/2/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface Map : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * name;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSNumber * uid;
 @property (nonatomic, retain) NSSet *mapPins;

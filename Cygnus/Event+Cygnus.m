@@ -30,7 +30,7 @@
         event.expiration = [eventInfo objectForKey:@"expiration"];
         event.imgURL = [eventInfo objectForKey:@"imgURL"];
          
-        NSLog(@"Event sucessfully created");
+        //NSLog(@"Event sucessfully created");
 
     } else {
         event = [matches lastObject];

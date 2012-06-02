@@ -20,7 +20,7 @@
         <relationship name="group" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="groupMap" inverseEntity="Group" syncable="YES"/>
     </entity>
     <entity name="Map" representedClassName="Map" isAbstract="YES" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="mapPins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MapPin" inverseName="map" inverseEntity="MapPin" syncable="YES"/>
@@ -53,13 +53,13 @@
         <relationship name="group" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="sharedMaps" inverseEntity="Group" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SharedMap" positionX="277" positionY="336" width="128" height="60"/>
+        <element name="Event" positionX="709" positionY="216" width="128" height="135"/>
         <element name="Group" positionX="-29" positionY="45" width="128" height="120"/>
         <element name="GroupMap" positionX="412" positionY="267" width="128" height="75"/>
-        <element name="Map" positionX="279" positionY="-0" width="128" height="120"/>
+        <element name="Map" positionX="279" positionY="-0" width="128" height="105"/>
         <element name="MapPin" positionX="520" positionY="3" width="128" height="150"/>
         <element name="Person" positionX="-27" positionY="246" width="128" height="105"/>
         <element name="PrivateMap" positionX="279" positionY="477" width="128" height="60"/>
-        <element name="Event" positionX="709" positionY="216" width="128" height="135"/>
+        <element name="SharedMap" positionX="277" positionY="336" width="128" height="60"/>
     </elements>
 </model>

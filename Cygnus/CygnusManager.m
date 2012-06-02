@@ -36,15 +36,10 @@ static UIManagedDocument*_simulation;
         
     NSDictionary *rootDict = [[NSDictionary alloc] initWithContentsOfFile:simulationModelPath];
 
+
     NSArray *people = [rootDict valueForKey:@"People"];
     NSArray *maps = [rootDict valueForKey:@"Maps"];
     NSArray *groups = [rootDict valueForKey:@"Groups"];
-
-    NSLog(@"POPULATING SIMULATION");
-
-    NSLog(@"People.count - %@", people.count);
-    NSLog(@"Maps.count - %@", maps.count);
-    NSLog(@"Groups.count - %@",groups.count);
     
     for (NSDictionary *map in maps) {
         [Map mapFromPlistData:map inManagedObjectContext:sim.managedObjectContext];

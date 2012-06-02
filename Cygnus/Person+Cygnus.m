@@ -16,7 +16,7 @@
     
     Person *person = nil;
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"first_name" ascending:YES]];
     request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", [personInfo objectForKey:@"uid"]];
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
@@ -38,7 +38,7 @@
             [person addPrivateMapsObject:map];
         }
         
-        NSLog(@"Person sucessfully created");
+        //NSLog(@"Person sucessfully created");
 
         
     } else {
@@ -52,8 +52,8 @@
     Person *person = nil;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", [personUID intValue]];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"first_name" ascending:YES]];
+    request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", personUID];
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
     

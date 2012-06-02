@@ -18,7 +18,7 @@
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"GroupMap"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", [mapUID intValue]];
+    request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", mapUID];
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
     
