@@ -41,7 +41,7 @@
             [group addSharedMapsObject:sharedMap];
         }
         
-       // NSLog(@"Group sucessfully created");
+        NSLog(@"Group sucessfully created");
 
         
     } else {
@@ -50,5 +50,21 @@
     return group;
 }
 
++ (Group *)groupFromUID:(NSNumber*)groupUID inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    Group *group = nil;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Group"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", groupUID];
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ([matches count] > 1) || ![matches count]) {
+        // handle error
+    } else {
+        group = [matches lastObject];
+    }
+    return group;
+}
 
 @end

@@ -1,38 +1,42 @@
 //
-//  Console_MapVC.m
+//  Atlas_MapVC.m
 //  Cygnus
 //
-//  Created by Juan-Carlos Foust on 6/1/12.
+//  Created by Juan-Carlos Foust on 6/2/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Console_MapVC.h"
+#import "Atlas_MapVC.h"
 #import <MapKit/MapKit.h>
-#import "ClientSettings.h"
+#import "ClientSessionManager.h"
 #import "CygnusManager.h"
 #import "CygnusAnnotation.h"
-#import "Console_LoginVC.h"
+#import "Atlas_LoginVC.h"
 
-@interface Console_MapVC () <MKMapViewDelegate, LoginViewControllerDelegate>
+@interface Atlas_MapVC () <MKMapViewDelegate, LoginViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UILabel *cygnusLabel;
+@property (weak, nonatomic) IBOutlet UIButton *listButton;
+
 
 @end
 
-@implementation Console_MapVC
+@implementation Atlas_MapVC
 @synthesize mapView = _mapView;
+@synthesize cygnusLabel = _cygnusLabel;
+@synthesize listButton = _listButton;
 
 #pragma mark - Life Cycle
 
 - (void)viewWillAppear:(BOOL)animated
 {    
-    NSArray *mapPins = [CygnusManager mapPinsForClient];
+    NSSet *mapPins = [ClientSessionManager mapPinsForCurrentUser];
     for (MapPin *mapPin in mapPins) {
         CygnusAnnotation *mpa = [[CygnusAnnotation alloc] init];
         mpa.mapPin = mapPin;
         [self.mapView addAnnotation:mpa];
     }
-    
-    //TODO corelocation
+    [self setBeacon];
     [self zoomMapForBestFit];
 }
 
@@ -41,9 +45,10 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard; //TODO return from UserPreferences
+    //self.titleButton.customView = self.cygnusLabel;
     
-    if (![ClientSettings currentUser]) {
-        Console_LoginVC *lvc = (Console_LoginVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Console_LoginVC"];
+    if (![ClientSessionManager currentUser]) {
+        Atlas_LoginVC *lvc = (Atlas_LoginVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Atlas_LoginVC"];
         lvc.delegate = self;
         [self presentModalViewController:lvc animated:NO];
     }
@@ -52,6 +57,8 @@
 - (void)viewDidUnload
 {
     [self setMapView:nil];
+    [self setCygnusLabel:nil];
+    [self setListButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -64,9 +71,9 @@
 
 #pragma mark - LoginViewControllerDelegate
 
-- (void)loginViewController:(Console_LoginVC *)sender didloginUserWithEmail:(NSString*)email
+- (void)loginViewController:(Atlas_LoginVC *)sender didloginUserWithEmail:(NSString*)email
 {
-    BOOL passed = [ClientSettings setCurrentUser:email];
+    BOOL passed = [ClientSessionManager setCurrentUser:email];
     if (!passed) {
         //handle error with login
     }
@@ -75,6 +82,11 @@
 
 
 #pragma mark - Map Helpers
+
+- (void)setBeacon
+{
+    //set beacon on map and status of beacon on toolbar
+}
 
 - (void)zoomMapForBestFit { 
     MKMapView *mapView = self.mapView;
@@ -107,26 +119,26 @@
 #pragma mark - MKMapViewDelegate
 
 /*
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    
+ - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+ {
  
-        ImageDisplayVC *ivc;
-        if (self.splitViewController) {
-            ivc = [[[self splitViewController] viewControllers] lastObject];
-            NSDictionary *photo = [(FlickrPhotoAnnotation *)view.annotation photo];
-            ivc.photo = photo;
-            [RecentlyViewedImages addToRecentlyViewed:photo];      
-        } else {
-            ivc = (ImageDisplayVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"ImageDisplayVC"];
-            NSDictionary *photo = [(FlickrPhotoAnnotation *)view.annotation photo];
-            ivc.photo = photo;
-            [RecentlyViewedImages addToRecentlyViewed:photo];  
-            [self.navigationController pushViewController:ivc animated:YES];
-        }
-
-}
-*/
+ 
+ ImageDisplayVC *ivc;
+ if (self.splitViewController) {
+ ivc = [[[self splitViewController] viewControllers] lastObject];
+ NSDictionary *photo = [(FlickrPhotoAnnotation *)view.annotation photo];
+ ivc.photo = photo;
+ [RecentlyViewedImages addToRecentlyViewed:photo];      
+ } else {
+ ivc = (ImageDisplayVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"ImageDisplayVC"];
+ NSDictionary *photo = [(FlickrPhotoAnnotation *)view.annotation photo];
+ ivc.photo = photo;
+ [RecentlyViewedImages addToRecentlyViewed:photo];  
+ [self.navigationController pushViewController:ivc animated:YES];
+ }
+ 
+ }
+ */
 
 #define ANNOTATION_VIEW_REUSE_ID @"MapPinView"
 
@@ -137,22 +149,22 @@
         view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:ANNOTATION_VIEW_REUSE_ID];
         //view.canShowCallout = YES;
         /*
-        UIButton *disclosureButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        disclosureButton.frame = CGRectMake(0, 0, 23, 23);
-        view.rightCalloutAccessoryView = disclosureButton;        
-        
-        if ([annotation isMemberOfClass:[FlickrPhotoAnnotation class]]) { 
-            view.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        }*/
+         UIButton *disclosureButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+         disclosureButton.frame = CGRectMake(0, 0, 23, 23);
+         view.rightCalloutAccessoryView = disclosureButton;        
+         
+         if ([annotation isMemberOfClass:[FlickrPhotoAnnotation class]]) { 
+         view.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+         }*/
     }
     
     /*
-    if ([annotation isMemberOfClass:[FlickrPlaceAnnotation class]]) {
-        view.leftCalloutAccessoryView = nil;
-    } else {
-        ((UIImageView *)view.leftCalloutAccessoryView).image = nil;
-    }*/
-        
+     if ([annotation isMemberOfClass:[FlickrPlaceAnnotation class]]) {
+     view.leftCalloutAccessoryView = nil;
+     } else {
+     ((UIImageView *)view.leftCalloutAccessoryView).image = nil;
+     }*/
+    
     view.draggable = YES;
     view.annotation = annotation;
     if ([(CygnusAnnotation*)annotation hasEvent]) {
@@ -163,24 +175,24 @@
 }
 
 /*
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
-{
-    dispatch_queue_t fetchQueue = dispatch_queue_create("flickr thumbnail fetch queue", NULL);
-    dispatch_async(fetchQueue, ^{
-        if ([view.annotation isMemberOfClass:[FlickrPhotoAnnotation class]]) {
-            FlickrPhotoAnnotation *selectedAnnotation = view.annotation; 
-            NSDictionary *photo = selectedAnnotation.photo;
-            NSURL *url = [FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare];
-            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if ([self.mapView.selectedAnnotations objectAtIndex:0] == selectedAnnotation) {
-                    ((UIImageView *)view.leftCalloutAccessoryView).image = image;   
-                }
-            });
-        }
-    });
-    dispatch_release(fetchQueue);
-}
+ - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+ {
+ dispatch_queue_t fetchQueue = dispatch_queue_create("flickr thumbnail fetch queue", NULL);
+ dispatch_async(fetchQueue, ^{
+ if ([view.annotation isMemberOfClass:[FlickrPhotoAnnotation class]]) {
+ FlickrPhotoAnnotation *selectedAnnotation = view.annotation; 
+ NSDictionary *photo = selectedAnnotation.photo;
+ NSURL *url = [FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatSquare];
+ UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+ dispatch_async(dispatch_get_main_queue(), ^{
+ if ([self.mapView.selectedAnnotations objectAtIndex:0] == selectedAnnotation) {
+ ((UIImageView *)view.leftCalloutAccessoryView).image = image;   
+ }
+ });
+ }
+ });
+ dispatch_release(fetchQueue);
+ }
  */
 
 

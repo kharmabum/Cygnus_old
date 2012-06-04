@@ -38,7 +38,7 @@
             [person addPrivateMapsObject:map];
         }
         
-        //NSLog(@"Person sucessfully created");
+        NSLog(@"Person sucessfully created");
 
         
     } else {

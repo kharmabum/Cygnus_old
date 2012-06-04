@@ -1,21 +1,21 @@
 //
-//  Console_LoginVC.m
+//  Atlas_LoginVC.m
 //  Cygnus
 //
-//  Created by Juan-Carlos Foust on 6/1/12.
+//  Created by Juan-Carlos Foust on 6/2/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Console_LoginVC.h"
+#import "Atlas_LoginVC.h"
 
-@interface Console_LoginVC () <UITextFieldDelegate>
+@interface Atlas_LoginVC () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *loginPromptLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *cygnusImageView;
 
 @end
 
-@implementation Console_LoginVC
+@implementation Atlas_LoginVC
 
 @synthesize email = _email;
 @synthesize loginPromptLabel = _loginPromptLabel;
@@ -46,7 +46,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-   //[self.emailTextField becomeFirstResponder];
+    //[self.emailTextField becomeFirstResponder];
 }
 
 - (void)viewDidLoad

@@ -53,7 +53,26 @@
             MapPin *mapPin = [MapPin mapPinFromPlistData:pin inManagedObjectContext:context];
             [map addMapPinsObject:mapPin];
         }
-        //NSLog(@"Map sucessfully created");
+        NSLog(@"Map sucessfully created");
+    } else {
+        map = [matches lastObject];
+    }
+    return map;
+}
+
+
++ (Map *)mapFromUID:(NSNumber*)mapUID inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    Map *map = nil;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Map"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", mapUID];
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ([matches count] > 1) || ![matches count]) {
+        // handle error
     } else {
         map = [matches lastObject];
     }

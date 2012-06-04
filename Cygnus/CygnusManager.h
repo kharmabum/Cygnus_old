@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person+Cygnus.h"
 
 #define SIM_MAP_TYPE_GROUP 0
 #define SIM_MAP_TYPE_SHARED 1
@@ -18,9 +19,14 @@
 
 #define CYGNUS_MAP_ID @"uid"
 
+#define CURRENT_USER_EMAIL          @"currentUserEmail"
+#define CURRENT_USER_ACTIVE_GROUPS  @"currentUserActiveGroups"
+#define CURRENT_USER_ACTIVE_MAPS    @"currentUserActiveMaps"
+
 @interface CygnusManager : NSObject
+
 + (void)loadSimulation;
 + (UIManagedDocument *)simulation;
-+ (NSArray *)mapPinsForClient;
++ (NSArray *)mapPinsForUser:(Person*)User;
 
 @end

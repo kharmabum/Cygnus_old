@@ -36,7 +36,6 @@ static UIManagedDocument*_simulation;
         
     NSDictionary *rootDict = [[NSDictionary alloc] initWithContentsOfFile:simulationModelPath];
 
-
     NSArray *people = [rootDict valueForKey:@"People"];
     NSArray *maps = [rootDict valueForKey:@"Maps"];
     NSArray *groups = [rootDict valueForKey:@"Groups"];
@@ -52,6 +51,10 @@ static UIManagedDocument*_simulation;
     for (NSDictionary *group in groups) {
         [Group groupFromPlistData:group inManagedObjectContext:sim.managedObjectContext];
     }
+    
+    NSArray *activePublicGroupAndMapDefault = [NSArray arrayWithObject:[NSNumber numberWithInt:0]];
+    [[NSUserDefaults standardUserDefaults] setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_GROUPS];
+    [[NSUserDefaults standardUserDefaults] setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_MAPS];
 }
 
 
@@ -93,7 +96,7 @@ static UIManagedDocument*_simulation;
     
 }
 
-+ (NSArray*)mapPinsForClient
++ (NSArray*)mapPinsForUser:(Person*)user
 {
     NSManagedObjectContext *context = [[CygnusManager simulation] managedObjectContext]; 
     NSArray *matches = nil;

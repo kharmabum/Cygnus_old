@@ -12,4 +12,7 @@
 
 + (Map *)mapFromPlistData:(NSDictionary*)mapInfo inManagedObjectContext:(NSManagedObjectContext*)context;
 
++ (Map *)mapFromUID:(NSNumber*)mapUID inManagedObjectContext:(NSManagedObjectContext*)context;
+
+
 @end

@@ -28,7 +28,6 @@
         mapPin.uid = [pinInfo objectForKey:@"uid"];
         mapPin.location_name = [pinInfo objectForKey:@"location_name"];
         mapPin.summary = [pinInfo objectForKey:@"summary"];
-        //mapPin.event = [pinInfo objectForKey:@"event"];
         mapPin.expiration = [pinInfo objectForKey:@"expiration"];
         mapPin.imgURL = [pinInfo objectForKey:@"imgURL"];
         mapPin.latitude = [pinInfo objectForKey:@"latitude"];

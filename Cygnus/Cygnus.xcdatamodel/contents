@@ -14,7 +14,7 @@
         <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="groupMap" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GroupMap" inverseName="group" inverseEntity="GroupMap" syncable="YES"/>
         <relationship name="members" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="groups" inverseEntity="Person" syncable="YES"/>
-        <relationship name="sharedMaps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SharedMap" inverseName="group" inverseEntity="SharedMap" syncable="YES"/>
+        <relationship name="sharedMaps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SharedMap" inverseName="groups" inverseEntity="SharedMap" syncable="YES"/>
     </entity>
     <entity name="GroupMap" representedClassName="GroupMap" parentEntity="Map" syncable="YES">
         <relationship name="group" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="groupMap" inverseEntity="Group" syncable="YES"/>
@@ -50,16 +50,16 @@
         <relationship name="creator" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="privateMaps" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="SharedMap" representedClassName="SharedMap" parentEntity="Map" syncable="YES">
-        <relationship name="group" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="sharedMaps" inverseEntity="Group" syncable="YES"/>
+        <relationship name="groups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Group" inverseName="sharedMaps" inverseEntity="Group" syncable="YES"/>
     </entity>
     <elements>
         <element name="Event" positionX="709" positionY="216" width="128" height="135"/>
-        <element name="Group" positionX="-29" positionY="45" width="128" height="120"/>
+        <element name="Group" positionX="-29" positionY="45" width="128" height="135"/>
         <element name="GroupMap" positionX="412" positionY="267" width="128" height="75"/>
-        <element name="Map" positionX="279" positionY="-0" width="128" height="105"/>
+        <element name="Map" positionX="279" positionY="-0" width="128" height="120"/>
         <element name="MapPin" positionX="520" positionY="3" width="128" height="150"/>
         <element name="Person" positionX="-27" positionY="246" width="128" height="105"/>
         <element name="PrivateMap" positionX="279" positionY="477" width="128" height="60"/>
-        <element name="SharedMap" positionX="277" positionY="336" width="128" height="60"/>
+        <element name="SharedMap" positionX="277" positionY="351" width="128" height="60"/>
     </elements>
 </model>

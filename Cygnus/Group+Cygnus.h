@@ -12,5 +12,6 @@
 
 + (Group *)groupFromPlistData:(NSDictionary*)groupInfo inManagedObjectContext:(NSManagedObjectContext*)context;
 
++ (Group *)groupFromUID:(NSNumber*)groupUID inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

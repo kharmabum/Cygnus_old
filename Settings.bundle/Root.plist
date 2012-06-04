@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Beacon</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Activate Beacon</string>
+			<key>Key</key>
+			<string>beacon_enabled</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Values</key>
+			<array>
+				<string>Fixed location (draggable)</string>
+				<string>5 min</string>
+				<string>15 min</string>
+				<string>30 min</string>
+				<string>1 hour</string>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Broadcast Frequency</string>
+			<key>Key</key>
+			<string>beacon_frequency</string>
+			<key>DefaultValue</key>
+			<string>15 min</string>
+		</dict>
+		<dict>
+			<key>Values</key>
+			<array>
+				<string>1 km - Campus</string>
+				<string>5 km - Palo Alto</string>
+				<string>10 km - Redwood City</string>
+				<string>50 km - San Francisco</string>
+				<string>1 km - Campus</string>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Broadcast Range</string>
+			<key>Key</key>
+			<string>beacon_range</string>
+			<key>DefaultValue</key>
+			<string>10 km - Redwood City</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>
