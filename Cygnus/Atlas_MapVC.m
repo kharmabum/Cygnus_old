@@ -26,10 +26,44 @@
 @synthesize cygnusLabel = _cygnusLabel;
 @synthesize listButton = _listButton;
 
+- (void)loadClientSession
+{
+    if (![ClientSessionManager currentUser]) {
+        Atlas_LoginVC *lvc = (Atlas_LoginVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Atlas_LoginVC"];
+        lvc.delegate = self;
+        [self presentModalViewController:lvc animated:NO];
+    }
+    switch ([[[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_USER_MAP_PREFERENCE] intValue]) {
+        case MAP_TYPE_STANDARD:
+            self.mapView.mapType = MKMapTypeStandard;
+            self.cygnusLabel.textColor = [UIColor blackColor];
+            self.cygnusLabel.alpha = 0.7;
+            self.listButton.imageView.image = [UIImage imageNamed:@"179-notepad.png"];
+            self.listButton.imageView.alpha = 0.9;
+            break;
+            
+        case MAP_TYPE_HYBRID:
+            self.mapView.mapType = MKMapTypeHybrid;
+            self.cygnusLabel.textColor = [UIColor whiteColor];
+            self.listButton.imageView.image = [UIImage imageNamed:@"179-notepad-white.png"];
+            self.cygnusLabel.alpha = self.listButton.imageView.alpha = 1;
+            break;
+            
+        case MAP_TYPE_SATELLITE:
+            self.mapView.mapType = MKMapTypeSatellite;
+            self.cygnusLabel.textColor = [UIColor whiteColor];
+            self.listButton.imageView.image = [UIImage imageNamed:@"179-notepad-white.png"];
+            self.cygnusLabel.alpha = self.listButton.imageView.alpha = 1;
+
+            break;
+    }
+}
+
 #pragma mark - Life Cycle
 
 - (void)viewWillAppear:(BOOL)animated
 {    
+    [self loadClientSession];
     NSSet *mapPins = [ClientSessionManager mapPinsForCurrentUser];
     for (MapPin *mapPin in mapPins) {
         CygnusAnnotation *mpa = [[CygnusAnnotation alloc] init];
@@ -44,14 +78,7 @@
 {
     [super viewDidLoad];
     self.mapView.delegate = self;
-    self.mapView.mapType = MKMapTypeStandard; //TODO return from UserPreferences
-    //self.titleButton.customView = self.cygnusLabel;
-    
-    if (![ClientSessionManager currentUser]) {
-        Atlas_LoginVC *lvc = (Atlas_LoginVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Atlas_LoginVC"];
-        lvc.delegate = self;
-        [self presentModalViewController:lvc animated:NO];
-    }
+    [self loadClientSession];
 }
 
 - (void)viewDidUnload

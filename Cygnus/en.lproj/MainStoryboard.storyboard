@@ -66,13 +66,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vp2-lU-YaT">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="Vp2-lU-YaT">
                                 <rect key="frame" x="286" y="11" width="21" height="29"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" image="179-notepad.png">
+                                <state key="normal" image="179-notepad-white.png">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,11 +202,11 @@
             </objects>
             <point key="canvasLocation" x="-1116" y="-1480"/>
         </scene>
-        <!--Table View Controller - Settings-->
+        <!--Console RootTVC - Settings-->
         <scene sceneID="c8A-B9-9DK">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQh-pZ-05c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="gmq-6e-gjA" sceneMemberID="viewController">
+                <tableViewController id="gmq-6e-gjA" customClass="Console_RootTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gwO-eh-mjY">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,9 +221,12 @@
                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                     <segments>
                                         <segment title="Standard"/>
-                                        <segment title="Satellite"/>
                                         <segment title="Hybrid"/>
+                                        <segment title="Satellite"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="mapTypeSelected:" destination="gmq-6e-gjA" eventType="valueChanged" id="dQD-ph-uGn"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -312,14 +315,17 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="bFx-AP-xMo"/>
+                    <connections>
+                        <outlet property="mapTypeSegmentedControl" destination="ZH4-yR-laQ" id="IA6-Ny-T9B"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-697" y="-1486"/>
+            <point key="canvasLocation" x="-719" y="-1485"/>
         </scene>
     </scenes>
     <resources>
         <image name="106-sliders.png" width="24" height="24"/>
-        <image name="179-notepad.png" width="22" height="28"/>
+        <image name="179-notepad-white.png" width="22" height="28"/>
         <image name="73-radar.png" width="27" height="27"/>
         <image name="cygnus_constellation.jpeg" width="1141" height="1715"/>
     </resources>
@@ -338,6 +344,12 @@
                 <relationship kind="outlet" name="cygnusLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="listButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="Console_RootTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Console_RootTVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapTypeSegmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
     </classes>

@@ -18,7 +18,6 @@
 + (Person *)currentUser;
 + (BOOL)setCurrentUser:(NSString*)email;
 + (void)logoutCurrentUser;
-
 // contain NSManagedObjects
 
 + (NSSet *)mapPinsForCurrentUser;

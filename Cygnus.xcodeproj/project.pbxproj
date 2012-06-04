@@ -53,6 +53,8 @@
 		3EDE376615734A1F006F83D2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE376415734A1F006F83D2 /* MainStoryboard.storyboard */; };
 		3EDE377015734B46006F83D2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE376F15734B46006F83D2 /* MapKit.framework */; };
 		3EDE377215734B4E006F83D2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE377115734B4E006F83D2 /* CoreData.framework */; };
+		3EF20FD5157C431300FC2151 /* 179-notepad-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF20FD4157C431300FC2151 /* 179-notepad-white.png */; };
+		3EF20FD8157C4AB400FC2151 /* Console_MyGroupsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF20FD7157C4AB400FC2151 /* Console_MyGroupsTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +132,9 @@
 		3EDE376515734A1F006F83D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3EDE376F15734B46006F83D2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3EDE377115734B4E006F83D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3EF20FD4157C431300FC2151 /* 179-notepad-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad-white.png"; sourceTree = "<group>"; };
+		3EF20FD6157C4AB400FC2151 /* Console_MyGroupsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Console_MyGroupsTVC.h; sourceTree = "<group>"; };
+		3EF20FD7157C4AB400FC2151 /* Console_MyGroupsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Console_MyGroupsTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				3E232B9C1578A4C100AE01D7 /* 179-notepad.png */,
+				3EF20FD4157C431300FC2151 /* 179-notepad-white.png */,
 				3E232B991578A40800AE01D7 /* 06-magnify.png */,
 				3E232B971578A3C700AE01D7 /* 193-location-arrow.png */,
 				3E232B951578A3C100AE01D7 /* 196-radiation.png */,
@@ -194,6 +200,8 @@
 			children = (
 				3E5CFEB2157B41CB00B6CDA4 /* Console_RootTVC.h */,
 				3E5CFEB3157B41CC00B6CDA4 /* Console_RootTVC.m */,
+				3EF20FD6157C4AB400FC2151 /* Console_MyGroupsTVC.h */,
+				3EF20FD7157C4AB400FC2151 /* Console_MyGroupsTVC.m */,
 			);
 			name = Console;
 			sourceTree = "<group>";
@@ -254,19 +262,12 @@
 		3EDE375815734A1F006F83D2 /* Cygnus */ = {
 			isa = PBXGroup;
 			children = (
-				3E5CFEB8157B424900B6CDA4 /* Atlas_MapVC.h */,
-				3E5CFEB9157B424900B6CDA4 /* Atlas_MapVC.m */,
-				3E5CFEB5157B422D00B6CDA4 /* Atlas_LoginVC.h */,
-				3E5CFEB6157B422D00B6CDA4 /* Atlas_LoginVC.m */,
 				3EDE376415734A1F006F83D2 /* MainStoryboard.storyboard */,
 				3E232BE51579637600AE01D7 /* CygnusManager.h */,
 				3E232BE61579637600AE01D7 /* CygnusManager.m */,
 				3E5CFEA5157B10B500B6CDA4 /* ClientSessionManager.h */,
 				3E5CFEA6157B10B500B6CDA4 /* ClientSessionManager.m */,
-				3E232BB115795CCB00AE01D7 /* CygnusAnnotation.h */,
-				3E232BB215795CCB00AE01D7 /* CygnusAnnotation.m */,
-				3E55A4D71579EE1B0001DED9 /* CygnusMapPinAnnotationView.h */,
-				3E55A4D81579EE1B0001DED9 /* CygnusMapPinAnnotationView.m */,
+				3EF20FCF157C36C600FC2151 /* Atlas */,
 				3E232BA51578A7C300AE01D7 /* Console */,
 				3E232BA41578A7A700AE01D7 /* Data Model */,
 				3EDE375915734A1F006F83D2 /* Supporting Files */,
@@ -291,6 +292,21 @@
 				3E232B9B1578A41400AE01D7 /* Icons */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3EF20FCF157C36C600FC2151 /* Atlas */ = {
+			isa = PBXGroup;
+			children = (
+				3E5CFEB8157B424900B6CDA4 /* Atlas_MapVC.h */,
+				3E5CFEB9157B424900B6CDA4 /* Atlas_MapVC.m */,
+				3E5CFEB5157B422D00B6CDA4 /* Atlas_LoginVC.h */,
+				3E5CFEB6157B422D00B6CDA4 /* Atlas_LoginVC.m */,
+				3E232BB115795CCB00AE01D7 /* CygnusAnnotation.h */,
+				3E232BB215795CCB00AE01D7 /* CygnusAnnotation.m */,
+				3E55A4D71579EE1B0001DED9 /* CygnusMapPinAnnotationView.h */,
+				3E55A4D81579EE1B0001DED9 /* CygnusMapPinAnnotationView.m */,
+			);
+			name = Atlas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +373,7 @@
 				3E232BF915796E3000AE01D7 /* Simulation.plist in Resources */,
 				3E55A4C31579D3280001DED9 /* cygnus_constellation.jpeg in Resources */,
 				3E75FB1A157A29220095B2B4 /* Settings.bundle in Resources */,
+				3EF20FD5157C431300FC2151 /* 179-notepad-white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +411,7 @@
 				3E5CFEB4157B41CC00B6CDA4 /* Console_RootTVC.m in Sources */,
 				3E5CFEB7157B422E00B6CDA4 /* Atlas_LoginVC.m in Sources */,
 				3E5CFEBA157B424900B6CDA4 /* Atlas_MapVC.m in Sources */,
+				3EF20FD8157C4AB400FC2151 /* Console_MyGroupsTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
