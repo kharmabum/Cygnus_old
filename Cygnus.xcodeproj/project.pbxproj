@@ -20,7 +20,6 @@
 		3E232BE71579637600AE01D7 /* CygnusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E232BE61579637600AE01D7 /* CygnusManager.m */; };
 		3E232BF915796E3000AE01D7 /* Simulation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E232BF815796E3000AE01D7 /* Simulation.plist */; };
 		3E232BFB157974A100AE01D7 /* Cygnus.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3E232BFA157974A100AE01D7 /* Cygnus.xcdatamodel */; };
-		3E55A48C1579A8000001DED9 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55A48B1579A8000001DED9 /* Person.m */; };
 		3E55A4951579A8800001DED9 /* GroupMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55A4941579A8800001DED9 /* GroupMap.m */; };
 		3E55A49E1579A91C0001DED9 /* PrivateMap+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55A49D1579A91C0001DED9 /* PrivateMap+Cygnus.m */; };
 		3E55A4A11579A9460001DED9 /* PrivateMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55A4A01579A9460001DED9 /* PrivateMap.m */; };
@@ -54,7 +53,9 @@
 		3EDE377015734B46006F83D2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE376F15734B46006F83D2 /* MapKit.framework */; };
 		3EDE377215734B4E006F83D2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE377115734B4E006F83D2 /* CoreData.framework */; };
 		3EF20FD5157C431300FC2151 /* 179-notepad-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF20FD4157C431300FC2151 /* 179-notepad-white.png */; };
-		3EF20FD8157C4AB400FC2151 /* Console_MyGroupsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF20FD7157C4AB400FC2151 /* Console_MyGroupsTVC.m */; };
+		3EF20FDE157C507200FC2151 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF20FDD157C507200FC2151 /* Person.m */; };
+		3EF20FE1157C55C100FC2151 /* Console_MyGroupsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF20FE0157C55C100FC2151 /* Console_MyGroupsTVC.m */; };
+		3EF20FE3157C64E800FC2151 /* 117-todo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF20FE2157C64E800FC2151 /* 117-todo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,8 +74,6 @@
 		3E232BE61579637600AE01D7 /* CygnusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CygnusManager.m; sourceTree = "<group>"; };
 		3E232BF815796E3000AE01D7 /* Simulation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Simulation.plist; sourceTree = "<group>"; };
 		3E232BFA157974A100AE01D7 /* Cygnus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cygnus.xcdatamodel; sourceTree = "<group>"; };
-		3E55A48A1579A8000001DED9 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		3E55A48B1579A8000001DED9 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		3E55A4931579A8800001DED9 /* GroupMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMap.h; sourceTree = "<group>"; };
 		3E55A4941579A8800001DED9 /* GroupMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMap.m; sourceTree = "<group>"; };
 		3E55A49C1579A91C0001DED9 /* PrivateMap+Cygnus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrivateMap+Cygnus.h"; sourceTree = "<group>"; };
@@ -133,8 +132,11 @@
 		3EDE376F15734B46006F83D2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3EDE377115734B4E006F83D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3EF20FD4157C431300FC2151 /* 179-notepad-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad-white.png"; sourceTree = "<group>"; };
-		3EF20FD6157C4AB400FC2151 /* Console_MyGroupsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Console_MyGroupsTVC.h; sourceTree = "<group>"; };
-		3EF20FD7157C4AB400FC2151 /* Console_MyGroupsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Console_MyGroupsTVC.m; sourceTree = "<group>"; };
+		3EF20FDC157C507200FC2151 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		3EF20FDD157C507200FC2151 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		3EF20FDF157C55C100FC2151 /* Console_MyGroupsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Console_MyGroupsTVC.h; sourceTree = "<group>"; };
+		3EF20FE0157C55C100FC2151 /* Console_MyGroupsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Console_MyGroupsTVC.m; sourceTree = "<group>"; };
+		3EF20FE2157C64E800FC2151 /* 117-todo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "117-todo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		3E232B9B1578A41400AE01D7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				3EF20FE2157C64E800FC2151 /* 117-todo.png */,
 				3E232B9C1578A4C100AE01D7 /* 179-notepad.png */,
 				3EF20FD4157C431300FC2151 /* 179-notepad-white.png */,
 				3E232B991578A40800AE01D7 /* 06-magnify.png */,
@@ -198,10 +201,10 @@
 		3E232BA51578A7C300AE01D7 /* Console */ = {
 			isa = PBXGroup;
 			children = (
+				3EF20FDF157C55C100FC2151 /* Console_MyGroupsTVC.h */,
+				3EF20FE0157C55C100FC2151 /* Console_MyGroupsTVC.m */,
 				3E5CFEB2157B41CB00B6CDA4 /* Console_RootTVC.h */,
 				3E5CFEB3157B41CC00B6CDA4 /* Console_RootTVC.m */,
-				3EF20FD6157C4AB400FC2151 /* Console_MyGroupsTVC.h */,
-				3EF20FD7157C4AB400FC2151 /* Console_MyGroupsTVC.m */,
 			);
 			name = Console;
 			sourceTree = "<group>";
@@ -209,6 +212,8 @@
 		3E232BE115795E0100AE01D7 /* NSManaged Objects */ = {
 			isa = PBXGroup;
 			children = (
+				3EF20FDC157C507200FC2151 /* Person.h */,
+				3EF20FDD157C507200FC2151 /* Person.m */,
 				3E5CFEA8157B246500B6CDA4 /* SharedMap.h */,
 				3E5CFEA9157B246500B6CDA4 /* SharedMap.m */,
 				3E75FB0D157A08850095B2B4 /* Map.h */,
@@ -223,8 +228,6 @@
 				3E55A4A01579A9460001DED9 /* PrivateMap.m */,
 				3E55A4931579A8800001DED9 /* GroupMap.h */,
 				3E55A4941579A8800001DED9 /* GroupMap.m */,
-				3E55A48A1579A8000001DED9 /* Person.h */,
-				3E55A48B1579A8000001DED9 /* Person.m */,
 			);
 			name = "NSManaged Objects";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				3E55A4C31579D3280001DED9 /* cygnus_constellation.jpeg in Resources */,
 				3E75FB1A157A29220095B2B4 /* Settings.bundle in Resources */,
 				3EF20FD5157C431300FC2151 /* 179-notepad-white.png in Resources */,
+				3EF20FE3157C64E800FC2151 /* 117-todo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +398,6 @@
 				3EC8C4E515798543006BB8CF /* Person+Cygnus.m in Sources */,
 				3EC8C4E815798550006BB8CF /* MapPin+Cygnus.m in Sources */,
 				3EC8C4EB1579855B006BB8CF /* Group+Cygnus.m in Sources */,
-				3E55A48C1579A8000001DED9 /* Person.m in Sources */,
 				3E55A4951579A8800001DED9 /* GroupMap.m in Sources */,
 				3E55A49E1579A91C0001DED9 /* PrivateMap+Cygnus.m in Sources */,
 				3E55A4A11579A9460001DED9 /* PrivateMap.m in Sources */,
@@ -411,7 +414,8 @@
 				3E5CFEB4157B41CC00B6CDA4 /* Console_RootTVC.m in Sources */,
 				3E5CFEB7157B422E00B6CDA4 /* Atlas_LoginVC.m in Sources */,
 				3E5CFEBA157B424900B6CDA4 /* Atlas_MapVC.m in Sources */,
-				3EF20FD8157C4AB400FC2151 /* Console_MyGroupsTVC.m in Sources */,
+				3EF20FDE157C507200FC2151 /* Person.m in Sources */,
+				3EF20FE1157C55C100FC2151 /* Console_MyGroupsTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
