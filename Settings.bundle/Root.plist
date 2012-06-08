@@ -36,7 +36,7 @@
 			<key>Key</key>
 			<string>beacon_frequency</string>
 			<key>DefaultValue</key>
-			<string>15 min</string>
+			<integer>300</integer>
 		</dict>
 		<dict>
 			<key>Values</key>
@@ -45,7 +45,6 @@
 				<string>5 km - Palo Alto</string>
 				<string>10 km - Redwood City</string>
 				<string>50 km - San Francisco</string>
-				<string>1 km - Campus</string>
 			</array>
 			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>
@@ -54,7 +53,7 @@
 			<key>Key</key>
 			<string>beacon_range</string>
 			<key>DefaultValue</key>
-			<string>10 km - Redwood City</string>
+			<integer>10000</integer>
 		</dict>
 	</array>
 	<key>StringsTable</key>

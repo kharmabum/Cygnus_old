@@ -2,7 +2,7 @@
 //  Person.m
 //  Cygnus
 //
-//  Created by Juan-Carlos Foust on 6/3/12.
+//  Created by Juan-Carlos Foust on 6/8/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,13 +13,15 @@
 
 @implementation Person
 
+@dynamic beaconActive;
+@dynamic broadcastRange;
 @dynamic email;
 @dynamic first_name;
+@dynamic imgURL;
 @dynamic last_name;
 @dynamic latitude;
 @dynamic longitude;
 @dynamic uid;
-@dynamic online;
 @dynamic groups;
 @dynamic privateMaps;
 

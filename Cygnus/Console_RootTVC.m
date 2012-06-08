@@ -10,17 +10,9 @@
 #import "CygnusManager.h"
 
 @interface Console_RootTVC ()
-@property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentedControl;
-
 @end
 
 @implementation Console_RootTVC
-@synthesize mapTypeSegmentedControl;
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.mapTypeSegmentedControl.selectedSegmentIndex = [[[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_USER_MAP_PREFERENCE] intValue];
-}
 
 - (void)viewDidLoad
 {
@@ -29,17 +21,12 @@
 
 - (void)viewDidUnload
 {
-    [self setMapTypeSegmentedControl:nil];
     [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (IBAction)mapTypeSelected:(UISegmentedControl *)sender {
-    [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:sender.selectedSegmentIndex]forKey:CURRENT_USER_MAP_PREFERENCE];
 }
 
 

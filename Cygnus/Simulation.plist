@@ -5,16 +5,22 @@
 	<key>People</key>
 	<array>
 		<dict>
+			<key>imgURL</key>
+			<string>https://sphotos.xx.fbcdn.net/hphotos-ash4/426465_2661677109916_792914287_n.jpg</string>
+			<key>broadcastRange</key>
+			<integer>50</integer>
 			<key>longitude</key>
-			<real>-122.1741</real>
+			<real>-122.172706</real>
+			<key>beaconActive</key>
+			<true/>
 			<key>latitude</key>
-			<real>37.428</real>
+			<real>37.428937</real>
 			<key>uid</key>
 			<integer>0</integer>
 			<key>first_name</key>
-			<string>JC</string>
+			<string>Juan-Carlos</string>
 			<key>last_name</key>
-			<string>Penny</string>
+			<string>Foust</string>
 			<key>email</key>
 			<string>foustjc@gmail.com</string>
 			<key>groups</key>
@@ -25,6 +31,12 @@
 			<array/>
 		</dict>
 		<dict>
+			<key>imgURL</key>
+			<string>https://sphotos.xx.fbcdn.net/hphotos-ash3/548318_1572551948063_2046214876_n.jpg</string>
+			<key>broadcastRange</key>
+			<integer>50</integer>
+			<key>beaconActive</key>
+			<true/>
 			<key>longitude</key>
 			<real>-122.1584</real>
 			<key>latitude</key>
@@ -44,9 +56,131 @@
 			<key>privateMaps</key>
 			<array/>
 		</dict>
+		<dict>
+			<key>imgURL</key>
+			<string>https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc7/299073_1718432200323_1065679383_n.jpg</string>
+			<key>broadcastRange</key>
+			<integer>50</integer>
+			<key>beaconActive</key>
+			<true/>
+			<key>longitude</key>
+			<real>-122.16929</real>
+			<key>latitude</key>
+			<real>37.42381</real>
+			<key>uid</key>
+			<integer>2</integer>
+			<key>first_name</key>
+			<string>George</string>
+			<key>last_name</key>
+			<string>Michopolous</string>
+			<key>email</key>
+			<string>test@test.com</string>
+			<key>groups</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</array>
+			<key>privateMaps</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>imgURL</key>
+			<string>https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc7/310909_2065735883338_2125101616_n.jpg</string>
+			<key>broadcastRange</key>
+			<integer>50</integer>
+			<key>beaconActive</key>
+			<true/>
+			<key>longitude</key>
+			<real>-122.16398</real>
+			<key>latitude</key>
+			<real>37.42304</real>
+			<key>uid</key>
+			<integer>3</integer>
+			<key>first_name</key>
+			<string>Gordon</string>
+			<key>last_name</key>
+			<string>Dean</string>
+			<key>email</key>
+			<string>test@test.com</string>
+			<key>groups</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</array>
+			<key>privateMaps</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>broadcastRange</key>
+			<integer>50</integer>
+			<key>imgURL</key>
+			<string>https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc7/314321_10150369372494437_1537126887_n.jpg</string>
+			<key>beaconActive</key>
+			<true/>
+			<key>longitude</key>
+			<real>-122.15846</real>
+			<key>latitude</key>
+			<real>37.42112</real>
+			<key>uid</key>
+			<integer>4</integer>
+			<key>first_name</key>
+			<string>Morgan</string>
+			<key>last_name</key>
+			<string>Duffy</string>
+			<key>email</key>
+			<string>test@test.com</string>
+			<key>groups</key>
+			<array>
+				<integer>0</integer>
+				<integer>2</integer>
+			</array>
+			<key>privateMaps</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>imgURL</key>
+			<string>https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc7/470145_10150800732092187_1875368340_o.jpg</string>
+			<key>broadcastRange</key>
+			<integer>50</integer>
+			<key>beaconActive</key>
+			<true/>
+			<key>longitude</key>
+			<real>-122.15375</real>
+			<key>latitude</key>
+			<real>37.42552</real>
+			<key>uid</key>
+			<integer>5</integer>
+			<key>first_name</key>
+			<string>Shilpa</string>
+			<key>last_name</key>
+			<string>Apte</string>
+			<key>email</key>
+			<string>test@test.com</string>
+			<key>groups</key>
+			<array>
+				<integer>0</integer>
+				<integer>2</integer>
+			</array>
+			<key>privateMaps</key>
+			<array/>
+		</dict>
 	</array>
 	<key>Maps</key>
 	<array>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>0</integer>
+			<key>mapType</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>Public</string>
+			<key>summary</key>
+			<string>Open to everyone.</string>
+		</dict>
 		<dict>
 			<key>mapPins</key>
 			<array>
@@ -62,7 +196,7 @@
 					<key>location_name</key>
 					<string>Tortuga</string>
 					<key>latitude</key>
-					<real>37.424835</real>
+					<real>37.424855</real>
 					<key>summary</key>
 					<string>Where rum goes to die.</string>
 					<key>events</key>
@@ -81,33 +215,256 @@
 						</dict>
 					</array>
 				</dict>
+			</array>
+			<key>uid</key>
+			<integer>1</integer>
+			<key>mapType</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>Los Compadres</string>
+			<key>summary</key>
+			<string>The Map of Champions</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>2</integer>
+			<key>mapType</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>Stanford - Class of 2016</string>
+			<key>summary</key>
+			<string>Stanford - Class of 2016, primary map description</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>3</integer>
+			<key>mapType</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Farm Survival Guide</string>
+			<key>summary</key>
+			<string>The Essentials</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>4</integer>
+			<key>mapType</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Stanford Bucket List</string>
+			<key>summary</key>
+			<string>Must have adventures and places to visit on campus.</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array>
 				<dict>
 					<key>uid</key>
-					<integer>0</integer>
+					<integer>2</integer>
 					<key>expiration</key>
 					<date>1991-06-07T10:00:00Z</date>
 					<key>imgURL</key>
-					<string>https://lh6.googleusercontent.com/-3PZg6SWxTkY/TjgqYAlZbCI/AAAAAAAAy9Y/0VGPEOWnqlw/s250-c-k/30042010%2B040.JPG</string>
+					<string>http://www.stanforddaily.com/wp-content/uploads/2012/05/NEWS.050112.terman.jpg</string>
 					<key>longitude</key>
-					<real>-122.169685</real>
+					<real>-122.17354</real>
 					<key>location_name</key>
-					<string>The Farm</string>
+					<string>Terman Engineering Fountain</string>
 					<key>latitude</key>
-					<real>37.429359</real>
+					<real>37.426013</real>
 					<key>summary</key>
-					<string>Stanford University</string>
+					<string></string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>3</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string>http://www.ageekstour.com/photos/TannerFountain/medium.jpg</string>
+					<key>longitude</key>
+					<real>-122.166738</real>
+					<key>location_name</key>
+					<string>Tanner Fountain</string>
+					<key>latitude</key>
+					<real>37.428324</real>
+					<key>summary</key>
+					<string></string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>4</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string>http://studentaffairs.stanford.edu/sites/default/files/ocb/images/OldFountain.JPG</string>
+					<key>longitude</key>
+					<real>-122.169932</real>
+					<key>location_name</key>
+					<string>Old Union Fountain</string>
+					<key>latitude</key>
+					<real>37.425082</real>
+					<key>summary</key>
+					<string></string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>5</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string>http://news.stanford.edu/news/2011/june/images/claw_news.jpg</string>
+					<key>longitude</key>
+					<real>-122.169353</real>
+					<key>location_name</key>
+					<string>The Claw</string>
+					<key>latitude</key>
+					<real>37.42498</real>
+					<key>summary</key>
+					<string></string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>6</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string>http://upload.wikimedia.org/wikipedia/commons/a/a8/Water_fountain_at_Stanford_University.jpg</string>
+					<key>longitude</key>
+					<real>-122.1674</real>
+					<key>location_name</key>
+					<string>Red Hoop Fountain</string>
+					<key>latitude</key>
+					<real>37.426441</real>
+					<key>summary</key>
+					<string></string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>7</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string>http://distilleryimage3.instagram.com/5ca3922c6c9c11e1989612313815112c_7.jpg</string>
+					<key>longitude</key>
+					<real>-122.168317</real>
+					<key>location_name</key>
+					<string>Bing Wing Fountain</string>
+					<key>latitude</key>
+					<real>37.427063</real>
+					<key>summary</key>
+					<string></string>
 					<key>events</key>
 					<array/>
 				</dict>
 			</array>
 			<key>uid</key>
-			<integer>0</integer>
+			<integer>5</integer>
 			<key>mapType</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>name</key>
-			<string>Public</string>
+			<string>Fountain Hop</string>
 			<key>summary</key>
-			<string>Open to everyone.</string>
+			<string>Each and every hopworthy fountain on the Farm.</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>6</integer>
+			<key>mapType</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>San Francisco - Under 21</string>
+			<key>summary</key>
+			<string>All that SF has to offer minus the hangover.</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>7</integer>
+			<key>mapType</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Work, Study, Sleep, Repeat</string>
+			<key>summary</key>
+			<string>Best work spaces on campus.</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>8</integer>
+			<key>mapType</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Campus Food Spots</string>
+			<key>summary</key>
+			<string>Every site on campus where calories are for sale.</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>9</integer>
+			<key>mapType</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Campus Beat</string>
+			<key>summary</key>
+			<string>All that happening, right now, on the Farm.</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>10</integer>
+			<key>mapType</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Marguerite Timetable</string>
+			<key>summary</key>
+			<string>Visualization of the Stanford Marguerite shuttle service schedule</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>11</integer>
+			<key>mapType</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Caltrain Timetable</string>
+			<key>summary</key>
+			<string>Visualization of the Caltrain schedule.</string>
+		</dict>
+		<dict>
+			<key>mapPins</key>
+			<array/>
+			<key>uid</key>
+			<integer>12</integer>
+			<key>mapType</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Fruit Trees</string>
+			<key>summary</key>
+			<string>Fresh farm fruit.</string>
 		</dict>
 	</array>
 	<key>Groups</key>
@@ -117,14 +474,64 @@
 			<integer>0</integer>
 			<key>name</key>
 			<string>Public</string>
+			<key>groupMap</key>
+			<integer>0</integer>
 			<key>summary</key>
 			<string>Open to everyone.</string>
+			<key>sharedMaps</key>
+			<array/>
+			<key>members</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>uid</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Los Compadres</string>
+			<key>groupMap</key>
+			<integer>1</integer>
+			<key>summary</key>
+			<string>Le Circle of Trust.</string>
 			<key>sharedMaps</key>
 			<array/>
 			<key>members</key>
 			<array>
 				<integer>0</integer>
 				<integer>1</integer>
+				<integer>2</integer>
+				<integer>4</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>uid</key>
+			<integer>2</integer>
+			<key>name</key>
+			<string>Stanford - Class of 2016</string>
+			<key>groupMap</key>
+			<integer>2</integer>
+			<key>summary</key>
+			<string>Guinea Pigs.</string>
+			<key>sharedMaps</key>
+			<array>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>7</integer>
+				<integer>8</integer>
+				<integer>9</integer>
+				<integer>10</integer>
+				<integer>11</integer>
+				<integer>12</integer>
+			</array>
+			<key>members</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
 			</array>
 		</dict>
 	</array>

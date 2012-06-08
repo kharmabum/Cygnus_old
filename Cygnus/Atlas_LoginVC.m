@@ -23,6 +23,12 @@
 @synthesize cygnusImageView = _cygnusImageView;
 @synthesize delegate = _delegate;
 
+
+- (IBAction)tap:(UITapGestureRecognizer *)sender {
+    [self.emailTextField becomeFirstResponder];
+}
+
+
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -46,13 +52,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    //[self.emailTextField becomeFirstResponder];
+    CGAffineTransform transform = self.cygnusImageView.transform;
+
+    [UIView animateWithDuration:100 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.cygnusImageView.transform = CGAffineTransformRotate(transform, M_PI);} completion:NULL];   
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.emailTextField.delegate = self;
+    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 }
 
 - (void)viewDidUnload

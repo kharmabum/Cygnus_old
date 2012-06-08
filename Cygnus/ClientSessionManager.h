@@ -18,11 +18,21 @@
 + (Person *)currentUser;
 + (BOOL)setCurrentUser:(NSString*)email;
 + (void)logoutCurrentUser;
++ (int)currentUserMapPreference;
++ (BOOL)currentUserBeaconEnabled;
++ (int)currentUserBeaconFrequency;
++ (int)currentUserBeaconRange;
++ (void)indicateNeedForUpdate:(BOOL)updateNeeded;
++ (BOOL)updateRequired;
+
+
 // contain NSManagedObjects
 
 + (NSSet *)mapPinsForCurrentUser;
 + (NSSet *)activeGroupsForCurrentUser;
 + (NSSet *)activeMapsForCurrentUser;
++ (NSSet *)availableMapsForCurrentUser;
+
 
 + (void)addToActiveGroups:(Group*)group;
 + (void)removeFromActiveGroups:(Group*)group;

@@ -11,6 +11,7 @@
 #import "Person+Cygnus.h"
 #import "Map+Cygnus.h"
 #import "Group+Cygnus.h"
+#import "ClientSessionManager.h"
 
 @implementation CygnusManager
 
@@ -52,9 +53,17 @@ static UIManagedDocument*_simulation;
         [Group groupFromPlistData:group inManagedObjectContext:sim.managedObjectContext];
     }
     
-    NSArray *activePublicGroupAndMapDefault = [NSArray arrayWithObject:[NSNumber numberWithInt:0]];
-    [[NSUserDefaults standardUserDefaults] setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_GROUPS];
-    [[NSUserDefaults standardUserDefaults] setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_MAPS];
+   NSArray *activePublicGroupAndMapDefault = [NSArray arrayWithObject:[NSNumber numberWithInt:0]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_GROUPS];
+    [defaults setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_MAPS];
+    [defaults setObject:[NSNumber numberWithInt:0] forKey:CURRENT_USER_MAP_PREFERENCE];
+    [defaults setObject:[NSNumber numberWithInt:1] forKey:CURRENT_USER_BEACON_ENABLED];
+    [defaults setObject:[NSNumber numberWithInt:30] forKey:CURRENT_USER_BEACON_FREQUENCY];
+    [defaults setObject:[NSNumber numberWithInt:10000] forKey:CURRENT_USER_BEACON_RANGE];
+    [defaults synchronize];
+    
 }
 
 
@@ -95,6 +104,27 @@ static UIManagedDocument*_simulation;
     
     
 }
+
+
++ (void)saveUserSettings
+{
+    NSUserDefaults *defaults =  [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray *groupIds = [NSMutableArray array];
+        for (Group *group in [ClientSessionManager activeGroupsForCurrentUser]) {
+            [groupIds addObject: group.uid];
+        }
+    NSMutableArray *mapIds = [NSMutableArray array];
+    for (Map *map in [ClientSessionManager activeMapsForCurrentUser]) {
+        [mapIds addObject: map.uid];
+    }
+    
+    [defaults setObject:groupIds forKey:CURRENT_USER_ACTIVE_GROUPS];
+    [defaults setObject:mapIds forKey:CURRENT_USER_ACTIVE_MAPS];
+}
+
+
+
 
 + (NSArray*)mapPinsForUser:(Person*)user
 {

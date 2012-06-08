@@ -13,20 +13,20 @@
 
 - (NSString *)title
 {
-return [self.mapPin location_name];
+    return [self.mapPin location_name];
 }
 
 - (NSString *)subtitle
 {
-return [self.mapPin summary];
+    return [self.mapPin summary];
 }
 
 - (CLLocationCoordinate2D)coordinate
 {
-CLLocationCoordinate2D coordinate;
-coordinate.latitude = [[self.mapPin latitude] floatValue];
-coordinate.longitude = [[self.mapPin longitude] floatValue];
-return coordinate;
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [[self.mapPin latitude] doubleValue];
+    coordinate.longitude = [[self.mapPin longitude] doubleValue];
+    return coordinate;
 }
 
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate

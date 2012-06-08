@@ -15,6 +15,19 @@ static Person *_currentUser;
 static NSMutableSet *_mapPinsForCurrentUser; 
 static NSMutableSet *_activeGroupsForCurrentUser; 
 static NSMutableSet *_activeMapsForCurrentUser; 
+static BOOL updateRequired = NO;
+
++ (void)indicateNeedForUpdate:(BOOL)updateNeeded
+{
+    updateRequired = updateNeeded;
+}
+
++ (BOOL)updateRequired
+{
+    BOOL oldStatus = updateRequired; 
+    updateRequired = NO;
+    return oldStatus;
+}
 
 + (Person *)currentUser
 {
@@ -37,6 +50,7 @@ static NSMutableSet *_activeMapsForCurrentUser;
         return YES;
     } else {
         //ERROR user not found
+        NSLog(@"Error user not found");
         return NO;
     }
 }
@@ -46,6 +60,27 @@ static NSMutableSet *_activeMapsForCurrentUser;
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:CURRENT_USER_EMAIL];
     _currentUser = nil;
 }
+
++ (int)currentUserMapPreference 
+{
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_USER_MAP_PREFERENCE] intValue];
+}
+
++ (BOOL)currentUserBeaconEnabled
+{
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_USER_BEACON_ENABLED] boolValue];
+}
+
++ (int)currentUserBeaconFrequency
+{
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_USER_BEACON_FREQUENCY] intValue]; 
+}
+
++ (int)currentUserBeaconRange
+{
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_USER_BEACON_RANGE] intValue]; 
+}
+
 
 //contain NSManagedObjects
 
@@ -91,6 +126,19 @@ static NSMutableSet *_activeMapsForCurrentUser;
     return _activeMapsForCurrentUser;
 }
 
++ (NSSet*)availableMapsForCurrentUser
+{
+    NSSet *groups = [[ClientSessionManager currentUser] groups];
+    NSMutableSet *maps = [NSMutableSet set];
+    for (Group *group in groups) {
+        [maps unionSet:group.sharedMaps];
+        [maps addObject:group.groupMap];
+    }
+    return maps;
+}
+
+
+
 + (void)addToActiveGroups:(Group*)group
 {
     //don't need to change active maps by default...
@@ -103,6 +151,7 @@ static NSMutableSet *_activeMapsForCurrentUser;
     if (_activeGroupsForCurrentUser) {
         [_activeGroupsForCurrentUser removeObject:group];
         
+        /*
         //CHANGE ACTIVE MAPS
         dispatch_queue_t updateActiveMaps = dispatch_queue_create("update active maps", NULL);
         dispatch_async(updateActiveMaps, ^{
@@ -121,7 +170,9 @@ static NSMutableSet *_activeMapsForCurrentUser;
             }
         });
         dispatch_release(updateActiveMaps);
+        */
     }
+         
 }
 
 + (void)addToActiveMaps:(Map*)map
@@ -140,6 +191,7 @@ static NSMutableSet *_activeMapsForCurrentUser;
 {
     [_activeMapsForCurrentUser removeObject:map];
     _mapPinsForCurrentUser = nil;
+    updateRequired = YES; // TODO - instead of requiring update and rebuild. create cached storages of annotations for each active map. 
 }
 
 @end

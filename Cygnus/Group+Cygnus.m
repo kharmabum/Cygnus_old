@@ -7,6 +7,7 @@
 //
 
 #import "Group+Cygnus.h"
+#import "GroupMap+Cygnus.h"
 #import "SharedMap+Cygnus.h"
 #import "Person+Cygnus.h"
 
@@ -29,16 +30,19 @@
         group.name = [groupInfo objectForKey:@"name"];
         group.summary = [groupInfo objectForKey:@"summary"];
         
-        NSArray *people = [groupInfo objectForKey:@"members"];
-        for (NSNumber *personUID in people) {
-            Person *person = [Person personFromUID:personUID inManagedObjectContext:context];
-            [group addMembersObject:person];
-        }
+        group.groupMap = [GroupMap groupMapFromUID:[groupInfo objectForKey:@"groupMap"] inManagedObjectContext:context];
         
         NSArray *sharedMaps = [groupInfo objectForKey:@"sharedMaps"];
         for (NSNumber *mapUID in sharedMaps) {
             SharedMap *sharedMap = [SharedMap sharedMapFromUID:mapUID inManagedObjectContext:context];
+
             [group addSharedMapsObject:sharedMap];
+        }
+        
+        NSArray *people = [groupInfo objectForKey:@"members"];
+        for (NSNumber *personUID in people) {
+            Person *person = [Person personFromUID:personUID inManagedObjectContext:context];
+            [group addMembersObject:person];
         }
         
         NSLog(@"Group sucessfully created");

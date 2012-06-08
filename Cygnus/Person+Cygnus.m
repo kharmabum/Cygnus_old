@@ -29,9 +29,11 @@
         person.first_name = [personInfo objectForKey:@"first_name"];
         person.last_name = [personInfo objectForKey:@"last_name"];
         person.email = [personInfo objectForKey:@"email"];
+        person.imgURL = [personInfo objectForKey:@"imgURL"];
         person.latitude = [personInfo objectForKey:@"latitude"];
         person.longitude = [personInfo objectForKey:@"longitude"];
-        
+        person.beaconActive = [personInfo objectForKey:@"beaconActive"];
+        person.broadcastRange = [personInfo objectForKey:@"broadCastRange"];
         NSArray *privateMaps = [personInfo objectForKey:@"privateMaps"];
         for (NSNumber *mapUID in privateMaps) {
             PrivateMap *map = [PrivateMap privateMapFromUID:mapUID inManagedObjectContext:context];
@@ -39,7 +41,6 @@
         }
         
         NSLog(@"Person sucessfully created");
-
         
     } else {
         person= [matches lastObject];

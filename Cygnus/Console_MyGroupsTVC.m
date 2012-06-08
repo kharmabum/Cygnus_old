@@ -11,29 +11,29 @@
 
 @interface Console_MyGroupsTVC ()
 @property (nonatomic, strong) NSArray *myGroups;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *activeMapEditButton;
-@property (nonatomic) BOOL activeMapsEditingMode;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *activeGroupsEditButton;
+@property (nonatomic) BOOL activeGroupsEditingMode;
 @property (nonatomic) UIColor *defaultEditButtonColor;
+@property (nonatomic) UIImage *activeGroupIndictor;
 
 @end
 
 @implementation Console_MyGroupsTVC
 @synthesize myGroups = _myGroups;
-@synthesize activeMapEditButton = _activeMapEditButton;
-@synthesize activeMapsEditingMode = _activeMapsEditingMode;
+@synthesize activeGroupsEditButton = _activeGroupsEditButton;
+@synthesize activeGroupsEditingMode = _activeGroupsEditingMode;
 @synthesize defaultEditButtonColor = _defaultEditButtonColor;
+@synthesize activeGroupIndictor = _activeGroupIndictor;
 
-
-- (void)setActiveMapsEditingMode:(BOOL)activeMapsEditingMode
+- (void)setactiveGroupsEditingMode:(BOOL)activeGroupsEditingMode
 {
-    _activeMapsEditingMode = activeMapsEditingMode;
-    self.activeMapEditButton.tintColor = (_activeMapsEditingMode) ? [UIColor redColor] : self.defaultEditButtonColor;
+    _activeGroupsEditingMode = activeGroupsEditingMode;
+    self.activeGroupsEditButton.tintColor = (_activeGroupsEditingMode) ? [UIColor redColor] : self.defaultEditButtonColor;
 }
 
 - (IBAction)switchEditingMode:(id)sender {
-    [self setActiveMapsEditingMode:!_activeMapsEditingMode];
+    [self setactiveGroupsEditingMode:!_activeGroupsEditingMode];
 }
-
 
 #pragma mark - Life cycle
 
@@ -41,18 +41,19 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.myGroups = [[[ClientSessionManager currentUser] groups] allObjects];
-    self.activeMapsEditingMode = NO;
+    self.activeGroupsEditingMode = NO;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.defaultEditButtonColor = self.editButtonItem.tintColor;
+    self.activeGroupIndictor = [UIImage imageNamed:@"check.png"];
 }
 
 - (void)viewDidUnload
 {
-    [self setActiveMapEditButton:nil];
+    [self setActiveGroupsEditButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -72,7 +73,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return (section) ? self.myGroups.count : 2;
+    return (section) ? self.myGroups.count : 1;
     NSLog(@"Size of MyGroups Section - %@",self.myGroups.count);
 }
 
@@ -82,29 +83,28 @@
 }
 
 #define CREATE_GROUP_CELL_IDENTIFIER @"Console_CreateGroupCell"
-#define GROUP_INVITATIONS_CELL_IDENTIFIER @"Console_GroupInvitationsCell"
 #define GROUP_CELL_IDENTIFIER @"Console_GroupCell"
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifier;
-    if (indexPath.section) {
-        cellIdentifier = GROUP_CELL_IDENTIFIER;
-    } else if (indexPath.row) {
-        cellIdentifier = GROUP_INVITATIONS_CELL_IDENTIFIER;
-    } else {
-        cellIdentifier = CREATE_GROUP_CELL_IDENTIFIER;
-
-    }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
+    UITableViewCell *cell;
     if (indexPath.section) {
         Group *group = [self.myGroups objectAtIndex:indexPath.row];
+        cellIdentifier = GROUP_CELL_IDENTIFIER;
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        NSLog(@"cell exists - %@", cell);
         cell.textLabel.text = [group name];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%d online members", group.members.count]; //TODO - Not accurate. ONLY FOR DEMO
-        cell.accessoryType = ([[ClientSessionManager activeGroupsForCurrentUser] containsObject:group]) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-
+        if ([[ClientSessionManager activeGroupsForCurrentUser] containsObject:group]) {
+            cell.imageView.image = self.activeGroupIndictor;
+        }
+    } else {
+        cellIdentifier = CREATE_GROUP_CELL_IDENTIFIER;
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     }
+
     return cell;
 }
 
@@ -125,17 +125,16 @@
     */
     
     if (indexPath.section) {
-        if (self.activeMapsEditingMode) {
-            
+        if (self.activeGroupsEditingMode) {
             [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            if (cell.accessoryType == UITableViewCellAccessoryNone) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            if (cell.imageView.image) {
+                cell.imageView.image = nil;
                 // Reflect selection in data model
-                [ClientSessionManager addToActiveGroups:[self.myGroups objectAtIndex:indexPath.row]];
-            } else if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
-                cell.accessoryType = UITableViewCellAccessoryNone;
                 [ClientSessionManager removeFromActiveGroups:[self.myGroups objectAtIndex:indexPath.row]];
+            } else {
+                cell.imageView.image = self.activeGroupIndictor;
+                [ClientSessionManager addToActiveGroups:[self.myGroups objectAtIndex:indexPath.row]];
             }
         } else {
             //transition to group description

@@ -2,7 +2,7 @@
 //  Person.h
 //  Cygnus
 //
-//  Created by Juan-Carlos Foust on 6/3/12.
+//  Created by Juan-Carlos Foust on 6/8/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,13 +13,15 @@
 
 @interface Person : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * beaconActive;
+@property (nonatomic, retain) NSNumber * broadcastRange;
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * first_name;
+@property (nonatomic, retain) NSString * imgURL;
 @property (nonatomic, retain) NSString * last_name;
 @property (nonatomic, retain) NSNumber * latitude;
 @property (nonatomic, retain) NSNumber * longitude;
 @property (nonatomic, retain) NSNumber * uid;
-@property (nonatomic, retain) NSNumber * online;
 @property (nonatomic, retain) NSSet *groups;
 @property (nonatomic, retain) NSSet *privateMaps;
 @end

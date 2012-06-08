@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0A567015826D180078F891 /* Atlas_EntityListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A566F15826D180078F891 /* Atlas_EntityListTVC.m */; };
+		3E155157157EB92200ED32D0 /* CygnusBeaconAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E155156157EB92200ED32D0 /* CygnusBeaconAnnotation.m */; };
+		3E163D22157C918B0014764D /* beaconActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D14157C918B0014764D /* beaconActive.png */; };
+		3E163D23157C918B0014764D /* beaconFollow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D15157C918B0014764D /* beaconFollow.png */; };
+		3E163D25157C918B0014764D /* beaconInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D17157C918B0014764D /* beaconInactive.png */; };
+		3E163D26157C918B0014764D /* bluePin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D18157C918B0014764D /* bluePin.png */; };
+		3E163D27157C918B0014764D /* bluePinEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D19157C918B0014764D /* bluePinEmpty.png */; };
+		3E163D28157C918B0014764D /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D1A157C918B0014764D /* check.png */; };
+		3E163D2B157C918B0014764D /* purplePin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D1D157C918B0014764D /* purplePin.png */; };
+		3E163D2C157C918B0014764D /* purplePinEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D1E157C918B0014764D /* purplePinEmpty.png */; };
+		3E163D2D157C918B0014764D /* redPin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D1F157C918B0014764D /* redPin.png */; };
+		3E163D2E157C918B0014764D /* redPinEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D20157C918B0014764D /* redPinEmpty.png */; };
+		3E163D32157C92820014764D /* atlas2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D31157C92820014764D /* atlas2.png */; };
+		3E163D34157C93890014764D /* atlas3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D33157C93890014764D /* atlas3.png */; };
+		3E163D37157CAFDC0014764D /* Console_MyMapsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E163D36157CAFDC0014764D /* Console_MyMapsTVC.m */; };
+		3E163D3A157CB95E0014764D /* Console_MapDisplayTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E163D39157CB95E0014764D /* Console_MapDisplayTVC.m */; };
+		3E163D3D157CBF320014764D /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D3B157CBF310014764D /* 111-user.png */; };
+		3E163D3E157CBF320014764D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E163D3C157CBF310014764D /* 112-group.png */; };
 		3E232B8E1578A32F00AE01D7 /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B8D1578A32F00AE01D7 /* 73-radar.png */; };
 		3E232B901578A33E00AE01D7 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B8F1578A33E00AE01D7 /* 74-location.png */; };
 		3E232B921578A35900AE01D7 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E232B911578A35900AE01D7 /* 103-map.png */; };
@@ -29,7 +47,6 @@
 		3E55A4CC1579E60A0001DED9 /* Event+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55A4CB1579E6090001DED9 /* Event+Cygnus.m */; };
 		3E55A4CF1579E86E0001DED9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55A4CE1579E86E0001DED9 /* Event.m */; };
 		3E55A4D21579E86F0001DED9 /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55A4D11579E86E0001DED9 /* MapPin.m */; };
-		3E55A4D91579EE1C0001DED9 /* CygnusMapPinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55A4D81579EE1B0001DED9 /* CygnusMapPinAnnotationView.m */; };
 		3E5CFE9F157ADBF300B6CDA4 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CFE9E157ADBF300B6CDA4 /* CoreDataTableViewController.m */; };
 		3E5CFEA7157B10B500B6CDA4 /* ClientSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CFEA6157B10B500B6CDA4 /* ClientSessionManager.m */; };
 		3E5CFEAA157B246500B6CDA4 /* SharedMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CFEA9157B246500B6CDA4 /* SharedMap.m */; };
@@ -38,6 +55,7 @@
 		3E5CFEBA157B424900B6CDA4 /* Atlas_MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5CFEB9157B424900B6CDA4 /* Atlas_MapVC.m */; };
 		3E75FB0F157A08850095B2B4 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E75FB0E157A08850095B2B4 /* Map.m */; };
 		3E75FB1A157A29220095B2B4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3E75FB19157A29210095B2B4 /* Settings.bundle */; };
+		3E86D3D615828D2C00034294 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86D3D515828D2C00034294 /* Person.m */; };
 		3EC8C4DC1579850E006BB8CF /* Map+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4DB1579850E006BB8CF /* Map+Cygnus.m */; };
 		3EC8C4DF15798526006BB8CF /* GroupMap+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4DE15798526006BB8CF /* GroupMap+Cygnus.m */; };
 		3EC8C4E515798543006BB8CF /* Person+Cygnus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C4E415798543006BB8CF /* Person+Cygnus.m */; };
@@ -52,13 +70,35 @@
 		3EDE376615734A1F006F83D2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE376415734A1F006F83D2 /* MainStoryboard.storyboard */; };
 		3EDE377015734B46006F83D2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE376F15734B46006F83D2 /* MapKit.framework */; };
 		3EDE377215734B4E006F83D2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDE377115734B4E006F83D2 /* CoreData.framework */; };
+		3EF0DA6B15820E13005A0B53 /* cygnus_hires.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3EF0DA6A15820E13005A0B53 /* cygnus_hires.jpeg */; };
 		3EF20FD5157C431300FC2151 /* 179-notepad-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF20FD4157C431300FC2151 /* 179-notepad-white.png */; };
-		3EF20FDE157C507200FC2151 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF20FDD157C507200FC2151 /* Person.m */; };
 		3EF20FE1157C55C100FC2151 /* Console_MyGroupsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF20FE0157C55C100FC2151 /* Console_MyGroupsTVC.m */; };
 		3EF20FE3157C64E800FC2151 /* 117-todo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF20FE2157C64E800FC2151 /* 117-todo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E0A566E15826D180078F891 /* Atlas_EntityListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Atlas_EntityListTVC.h; sourceTree = "<group>"; };
+		3E0A566F15826D180078F891 /* Atlas_EntityListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Atlas_EntityListTVC.m; sourceTree = "<group>"; };
+		3E155155157EB92200ED32D0 /* CygnusBeaconAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CygnusBeaconAnnotation.h; sourceTree = "<group>"; };
+		3E155156157EB92200ED32D0 /* CygnusBeaconAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CygnusBeaconAnnotation.m; sourceTree = "<group>"; };
+		3E163D14157C918B0014764D /* beaconActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beaconActive.png; sourceTree = "<group>"; };
+		3E163D15157C918B0014764D /* beaconFollow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beaconFollow.png; sourceTree = "<group>"; };
+		3E163D17157C918B0014764D /* beaconInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beaconInactive.png; sourceTree = "<group>"; };
+		3E163D18157C918B0014764D /* bluePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluePin.png; sourceTree = "<group>"; };
+		3E163D19157C918B0014764D /* bluePinEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluePinEmpty.png; sourceTree = "<group>"; };
+		3E163D1A157C918B0014764D /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		3E163D1D157C918B0014764D /* purplePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purplePin.png; sourceTree = "<group>"; };
+		3E163D1E157C918B0014764D /* purplePinEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purplePinEmpty.png; sourceTree = "<group>"; };
+		3E163D1F157C918B0014764D /* redPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redPin.png; sourceTree = "<group>"; };
+		3E163D20157C918B0014764D /* redPinEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redPinEmpty.png; sourceTree = "<group>"; };
+		3E163D31157C92820014764D /* atlas2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = atlas2.png; sourceTree = "<group>"; };
+		3E163D33157C93890014764D /* atlas3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = atlas3.png; sourceTree = "<group>"; };
+		3E163D35157CAFDC0014764D /* Console_MyMapsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Console_MyMapsTVC.h; sourceTree = "<group>"; };
+		3E163D36157CAFDC0014764D /* Console_MyMapsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Console_MyMapsTVC.m; sourceTree = "<group>"; };
+		3E163D38157CB95D0014764D /* Console_MapDisplayTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Console_MapDisplayTVC.h; sourceTree = "<group>"; };
+		3E163D39157CB95E0014764D /* Console_MapDisplayTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Console_MapDisplayTVC.m; sourceTree = "<group>"; };
+		3E163D3B157CBF310014764D /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
+		3E163D3C157CBF310014764D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		3E232B8D1578A32F00AE01D7 /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
 		3E232B8F1578A33E00AE01D7 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
 		3E232B911578A35900AE01D7 /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
@@ -91,8 +131,6 @@
 		3E55A4CE1579E86E0001DED9 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		3E55A4D01579E86E0001DED9 /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
 		3E55A4D11579E86E0001DED9 /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
-		3E55A4D71579EE1B0001DED9 /* CygnusMapPinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CygnusMapPinAnnotationView.h; sourceTree = "<group>"; };
-		3E55A4D81579EE1B0001DED9 /* CygnusMapPinAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CygnusMapPinAnnotationView.m; sourceTree = "<group>"; };
 		3E5CFE9D157ADBF300B6CDA4 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		3E5CFE9E157ADBF300B6CDA4 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		3E5CFEA5157B10B500B6CDA4 /* ClientSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientSessionManager.h; sourceTree = "<group>"; };
@@ -108,6 +146,8 @@
 		3E75FB0D157A08850095B2B4 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		3E75FB0E157A08850095B2B4 /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
 		3E75FB19157A29210095B2B4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
+		3E86D3D415828D2C00034294 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		3E86D3D515828D2C00034294 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		3EC8C4DA1579850E006BB8CF /* Map+Cygnus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Map+Cygnus.h"; sourceTree = "<group>"; };
 		3EC8C4DB1579850E006BB8CF /* Map+Cygnus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Map+Cygnus.m"; sourceTree = "<group>"; };
 		3EC8C4DD15798526006BB8CF /* GroupMap+Cygnus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GroupMap+Cygnus.h"; sourceTree = "<group>"; };
@@ -131,9 +171,8 @@
 		3EDE376515734A1F006F83D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3EDE376F15734B46006F83D2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3EDE377115734B4E006F83D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3EF0DA6A15820E13005A0B53 /* cygnus_hires.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cygnus_hires.jpeg; sourceTree = "<group>"; };
 		3EF20FD4157C431300FC2151 /* 179-notepad-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad-white.png"; sourceTree = "<group>"; };
-		3EF20FDC157C507200FC2151 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		3EF20FDD157C507200FC2151 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		3EF20FDF157C55C100FC2151 /* Console_MyGroupsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Console_MyGroupsTVC.h; sourceTree = "<group>"; };
 		3EF20FE0157C55C100FC2151 /* Console_MyGroupsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Console_MyGroupsTVC.m; sourceTree = "<group>"; };
 		3EF20FE2157C64E800FC2151 /* 117-todo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "117-todo.png"; sourceTree = "<group>"; };
@@ -156,9 +195,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E163D30157C919F0014764D /* Pins */ = {
+			isa = PBXGroup;
+			children = (
+				3E163D17157C918B0014764D /* beaconInactive.png */,
+				3E163D14157C918B0014764D /* beaconActive.png */,
+				3E163D15157C918B0014764D /* beaconFollow.png */,
+				3E163D1F157C918B0014764D /* redPin.png */,
+				3E163D20157C918B0014764D /* redPinEmpty.png */,
+				3E163D18157C918B0014764D /* bluePin.png */,
+				3E163D19157C918B0014764D /* bluePinEmpty.png */,
+				3E163D1D157C918B0014764D /* purplePin.png */,
+				3E163D1E157C918B0014764D /* purplePinEmpty.png */,
+			);
+			name = Pins;
+			sourceTree = "<group>";
+		};
 		3E232B9B1578A41400AE01D7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				3E163D3B157CBF310014764D /* 111-user.png */,
+				3E163D3C157CBF310014764D /* 112-group.png */,
+				3E163D31157C92820014764D /* atlas2.png */,
+				3E163D33157C93890014764D /* atlas3.png */,
+				3E163D30157C919F0014764D /* Pins */,
+				3E163D1A157C918B0014764D /* check.png */,
 				3EF20FE2157C64E800FC2151 /* 117-todo.png */,
 				3E232B9C1578A4C100AE01D7 /* 179-notepad.png */,
 				3EF20FD4157C431300FC2151 /* 179-notepad-white.png */,
@@ -201,6 +262,10 @@
 		3E232BA51578A7C300AE01D7 /* Console */ = {
 			isa = PBXGroup;
 			children = (
+				3E163D38157CB95D0014764D /* Console_MapDisplayTVC.h */,
+				3E163D39157CB95E0014764D /* Console_MapDisplayTVC.m */,
+				3E163D35157CAFDC0014764D /* Console_MyMapsTVC.h */,
+				3E163D36157CAFDC0014764D /* Console_MyMapsTVC.m */,
 				3EF20FDF157C55C100FC2151 /* Console_MyGroupsTVC.h */,
 				3EF20FE0157C55C100FC2151 /* Console_MyGroupsTVC.m */,
 				3E5CFEB2157B41CB00B6CDA4 /* Console_RootTVC.h */,
@@ -212,8 +277,8 @@
 		3E232BE115795E0100AE01D7 /* NSManaged Objects */ = {
 			isa = PBXGroup;
 			children = (
-				3EF20FDC157C507200FC2151 /* Person.h */,
-				3EF20FDD157C507200FC2151 /* Person.m */,
+				3E86D3D415828D2C00034294 /* Person.h */,
+				3E86D3D515828D2C00034294 /* Person.m */,
 				3E5CFEA8157B246500B6CDA4 /* SharedMap.h */,
 				3E5CFEA9157B246500B6CDA4 /* SharedMap.m */,
 				3E75FB0D157A08850095B2B4 /* Map.h */,
@@ -281,10 +346,10 @@
 		3EDE375915734A1F006F83D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3E232BF815796E3000AE01D7 /* Simulation.plist */,
 				3E5CFE9D157ADBF300B6CDA4 /* CoreDataTableViewController.h */,
 				3E5CFE9E157ADBF300B6CDA4 /* CoreDataTableViewController.m */,
 				3E75FB19157A29210095B2B4 /* Settings.bundle */,
-				3E232BF815796E3000AE01D7 /* Simulation.plist */,
 				3EDE376115734A1F006F83D2 /* CygnusAppDelegate.h */,
 				3EDE376215734A1F006F83D2 /* CygnusAppDelegate.m */,
 				3EDE375A15734A1F006F83D2 /* Cygnus-Info.plist */,
@@ -292,6 +357,7 @@
 				3EDE375E15734A1F006F83D2 /* main.m */,
 				3EDE376015734A1F006F83D2 /* Cygnus-Prefix.pch */,
 				3E55A4C21579D3280001DED9 /* cygnus_constellation.jpeg */,
+				3EF0DA6A15820E13005A0B53 /* cygnus_hires.jpeg */,
 				3E232B9B1578A41400AE01D7 /* Icons */,
 			);
 			name = "Supporting Files";
@@ -300,14 +366,16 @@
 		3EF20FCF157C36C600FC2151 /* Atlas */ = {
 			isa = PBXGroup;
 			children = (
-				3E5CFEB8157B424900B6CDA4 /* Atlas_MapVC.h */,
-				3E5CFEB9157B424900B6CDA4 /* Atlas_MapVC.m */,
 				3E5CFEB5157B422D00B6CDA4 /* Atlas_LoginVC.h */,
 				3E5CFEB6157B422D00B6CDA4 /* Atlas_LoginVC.m */,
+				3E5CFEB8157B424900B6CDA4 /* Atlas_MapVC.h */,
+				3E5CFEB9157B424900B6CDA4 /* Atlas_MapVC.m */,
+				3E0A566E15826D180078F891 /* Atlas_EntityListTVC.h */,
+				3E0A566F15826D180078F891 /* Atlas_EntityListTVC.m */,
 				3E232BB115795CCB00AE01D7 /* CygnusAnnotation.h */,
 				3E232BB215795CCB00AE01D7 /* CygnusAnnotation.m */,
-				3E55A4D71579EE1B0001DED9 /* CygnusMapPinAnnotationView.h */,
-				3E55A4D81579EE1B0001DED9 /* CygnusMapPinAnnotationView.m */,
+				3E155155157EB92200ED32D0 /* CygnusBeaconAnnotation.h */,
+				3E155156157EB92200ED32D0 /* CygnusBeaconAnnotation.m */,
 			);
 			name = Atlas;
 			sourceTree = "<group>";
@@ -378,6 +446,21 @@
 				3E75FB1A157A29220095B2B4 /* Settings.bundle in Resources */,
 				3EF20FD5157C431300FC2151 /* 179-notepad-white.png in Resources */,
 				3EF20FE3157C64E800FC2151 /* 117-todo.png in Resources */,
+				3E163D22157C918B0014764D /* beaconActive.png in Resources */,
+				3E163D23157C918B0014764D /* beaconFollow.png in Resources */,
+				3E163D25157C918B0014764D /* beaconInactive.png in Resources */,
+				3E163D26157C918B0014764D /* bluePin.png in Resources */,
+				3E163D27157C918B0014764D /* bluePinEmpty.png in Resources */,
+				3E163D28157C918B0014764D /* check.png in Resources */,
+				3E163D2B157C918B0014764D /* purplePin.png in Resources */,
+				3E163D2C157C918B0014764D /* purplePinEmpty.png in Resources */,
+				3E163D2D157C918B0014764D /* redPin.png in Resources */,
+				3E163D2E157C918B0014764D /* redPinEmpty.png in Resources */,
+				3E163D32157C92820014764D /* atlas2.png in Resources */,
+				3E163D34157C93890014764D /* atlas3.png in Resources */,
+				3E163D3D157CBF320014764D /* 111-user.png in Resources */,
+				3E163D3E157CBF320014764D /* 112-group.png in Resources */,
+				3EF0DA6B15820E13005A0B53 /* cygnus_hires.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +489,6 @@
 				3E55A4CC1579E60A0001DED9 /* Event+Cygnus.m in Sources */,
 				3E55A4CF1579E86E0001DED9 /* Event.m in Sources */,
 				3E55A4D21579E86F0001DED9 /* MapPin.m in Sources */,
-				3E55A4D91579EE1C0001DED9 /* CygnusMapPinAnnotationView.m in Sources */,
 				3E75FB0F157A08850095B2B4 /* Map.m in Sources */,
 				3E5CFE9F157ADBF300B6CDA4 /* CoreDataTableViewController.m in Sources */,
 				3E5CFEA7157B10B500B6CDA4 /* ClientSessionManager.m in Sources */,
@@ -414,8 +496,12 @@
 				3E5CFEB4157B41CC00B6CDA4 /* Console_RootTVC.m in Sources */,
 				3E5CFEB7157B422E00B6CDA4 /* Atlas_LoginVC.m in Sources */,
 				3E5CFEBA157B424900B6CDA4 /* Atlas_MapVC.m in Sources */,
-				3EF20FDE157C507200FC2151 /* Person.m in Sources */,
 				3EF20FE1157C55C100FC2151 /* Console_MyGroupsTVC.m in Sources */,
+				3E163D37157CAFDC0014764D /* Console_MyMapsTVC.m in Sources */,
+				3E163D3A157CB95E0014764D /* Console_MapDisplayTVC.m in Sources */,
+				3E155157157EB92200ED32D0 /* CygnusBeaconAnnotation.m in Sources */,
+				3E0A567015826D180078F891 /* Atlas_EntityListTVC.m in Sources */,
+				3E86D3D615828D2C00034294 /* Person.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,8 +577,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cygnus/Cygnus-Prefix.pch";
+				GENERATE_PROFILING_CODE = NO;
 				INFOPLIST_FILE = "Cygnus/Cygnus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -502,8 +591,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cygnus/Cygnus-Prefix.pch";
+				GENERATE_PROFILING_CODE = NO;
 				INFOPLIST_FILE = "Cygnus/Cygnus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
