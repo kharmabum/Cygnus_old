@@ -35,7 +35,6 @@
         NSArray *sharedMaps = [groupInfo objectForKey:@"sharedMaps"];
         for (NSNumber *mapUID in sharedMaps) {
             SharedMap *sharedMap = [SharedMap sharedMapFromUID:mapUID inManagedObjectContext:context];
-
             [group addSharedMapsObject:sharedMap];
         }
         

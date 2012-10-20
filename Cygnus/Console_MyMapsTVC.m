@@ -10,12 +10,11 @@
 #import "ClientSessionManager.h"
 
 @interface Console_MyMapsTVC ()
-@property (nonatomic, strong) NSArray *myMaps;
+@property (nonatomic, strong) NSMutableOrderedSet *myMaps;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *activeMapsEditButton;
 @property (nonatomic) BOOL activeMapsEditingMode;
 @property (nonatomic) UIColor *defaultEditButtonColor;
-@property (nonatomic) UIImage *activeMapIndictor;
-
+ 
 @end
 
 @implementation Console_MyMapsTVC
@@ -23,16 +22,15 @@
 @synthesize activeMapsEditButton = _activeMapsEditButton;
 @synthesize activeMapsEditingMode = _activeMapsEditingMode;
 @synthesize defaultEditButtonColor = _defaultEditButtonColor;
-@synthesize activeMapIndictor = _activeMapIndictor;
 
-- (void)setactiveMapsEditingMode:(BOOL)activeMapsEditingMode
+- (void)setActiveMapsEditingMode:(BOOL)activeMapsEditingMode
 {
     _activeMapsEditingMode = activeMapsEditingMode;
     self.activeMapsEditButton.tintColor = (_activeMapsEditingMode) ? [UIColor redColor] : self.defaultEditButtonColor;
 }
 
 - (IBAction)switchEditingMode:(id)sender {
-    [self setactiveMapsEditingMode:!_activeMapsEditingMode];
+    [self setActiveMapsEditingMode:!_activeMapsEditingMode];
 }
 
 
@@ -41,23 +39,21 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.myMaps = [[ClientSessionManager availableMapsForCurrentUser] allObjects];
-    [self setactiveMapsEditingMode:NO];
+    self.myMaps =  [[NSMutableOrderedSet alloc] initWithOrderedSet: [ClientSessionManager availableMapsForCurrentUser]];
+    [self.myMaps minusSet:[NSSet setWithArray:[[ClientSessionManager activeMapsForCurrentUser] array]]];
+    [self setActiveMapsEditingMode:NO];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.defaultEditButtonColor = self.editButtonItem.tintColor;
-    self.activeMapIndictor = [UIImage imageNamed:@"check.png"];
 }
 
 - (void)viewDidUnload
 {
     [self setActiveMapsEditButton:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -69,18 +65,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return (section) ? self.myMaps.count : 1;
-    NSLog(@"Size of myMaps Section - %@",self.myMaps.count);
+    if (!section) {
+        return 1;
+    } else if (section == 1) {
+        return [[ClientSessionManager activeMapsForCurrentUser] count];
+    } else {
+        return [self.myMaps count];
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return (section) ? @"Active Maps" : nil;
+    if (!section) {
+        return nil;
+    } else if (section == 1) {
+        return @"Active Maps";
+    } else {
+        return @"My Maps";
+    }
 }
 
 #define CREATE_MAP_CELL_IDENTIFIER @"Console_CreateMapCell"
@@ -91,18 +98,21 @@
 {
     NSString *cellIdentifier;
     UITableViewCell *cell;
-    if (indexPath.section) {
-        Map *map = [self.myMaps objectAtIndex:indexPath.row];
-        cellIdentifier = MAP_CELL_IDENTIFIER;
-        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        cell.textLabel.text = [map name];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d items, # events", map.mapPins.count];  //TODO # of events? need new attribute
-        if ([[ClientSessionManager activeMapsForCurrentUser] containsObject:map]) {
-            cell.imageView.image = self.activeMapIndictor;
-        }
-    } else {
+    
+    if (!indexPath.section) {
         cellIdentifier = CREATE_MAP_CELL_IDENTIFIER;
         cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    } else {
+        Map *map;
+        cellIdentifier = MAP_CELL_IDENTIFIER;
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (indexPath.section == 1) {
+            map = [[ClientSessionManager activeMapsForCurrentUser] objectAtIndex:indexPath.row];
+        } else {
+            map = [self.myMaps objectAtIndex:indexPath.row];
+        }
+        cell.textLabel.text = [map name];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d items", map.mapPins.count];  //TODO # of events? need new attribute
     }
     return cell;
 }
@@ -120,15 +130,16 @@
     if (indexPath.section) {
         if (self.activeMapsEditingMode) {
             [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
-            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            if (cell.imageView.image) {
-                cell.imageView.image = nil;
-                // Reflect selection in data model
-                [ClientSessionManager removeFromActiveMaps:[self.myMaps objectAtIndex:indexPath.row]];
+            if (indexPath.section == 1) {
+                Map *map = [[ClientSessionManager activeMapsForCurrentUser] objectAtIndex:indexPath.row];
+                [ClientSessionManager removeFromActiveMaps:map];
+                [self.myMaps addObject:map];
             } else {
-                cell.imageView.image = self.activeMapIndictor;
-                [ClientSessionManager addToActiveMaps:[self.myMaps objectAtIndex:indexPath.row]];
+                Map *map = [self.myMaps objectAtIndex:indexPath.row];
+                [self.myMaps removeObject:map];
+                [ClientSessionManager addToActiveMaps:map];
             }
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)] withRowAnimation:UITableViewRowAnimationAutomatic];
         } else {
             //transition to Map detail viewcontroller
         }

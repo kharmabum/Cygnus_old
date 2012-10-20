@@ -10,11 +10,10 @@
 #import "ClientSessionManager.h"
 
 @interface Console_MyGroupsTVC ()
-@property (nonatomic, strong) NSArray *myGroups;
+@property (nonatomic, strong) NSMutableOrderedSet *myGroups;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *activeGroupsEditButton;
 @property (nonatomic) BOOL activeGroupsEditingMode;
-@property (nonatomic) UIColor *defaultEditButtonColor;
-@property (nonatomic) UIImage *activeGroupIndictor;
+@property (nonatomic, strong) UIColor *defaultEditButtonColor;
 
 @end
 
@@ -23,7 +22,6 @@
 @synthesize activeGroupsEditButton = _activeGroupsEditButton;
 @synthesize activeGroupsEditingMode = _activeGroupsEditingMode;
 @synthesize defaultEditButtonColor = _defaultEditButtonColor;
-@synthesize activeGroupIndictor = _activeGroupIndictor;
 
 - (void)setactiveGroupsEditingMode:(BOOL)activeGroupsEditingMode
 {
@@ -31,7 +29,7 @@
     self.activeGroupsEditButton.tintColor = (_activeGroupsEditingMode) ? [UIColor redColor] : self.defaultEditButtonColor;
 }
 
-- (IBAction)switchEditingMode:(id)sender {
+- (IBAction)switchEditingMode:(UIBarButtonItem *)sender {
     [self setactiveGroupsEditingMode:!_activeGroupsEditingMode];
 }
 
@@ -40,23 +38,21 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.myGroups = [[[ClientSessionManager currentUser] groups] allObjects];
-    self.activeGroupsEditingMode = NO;
+    self.myGroups =  [[NSMutableOrderedSet alloc] initWithSet: [[ClientSessionManager currentUser] groups]];
+    [self.myGroups minusSet:[NSSet setWithArray:[[ClientSessionManager activeGroupsForCurrentUser] array]]];
+    [self setactiveGroupsEditingMode:NO];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.defaultEditButtonColor = self.editButtonItem.tintColor;
-    self.activeGroupIndictor = [UIImage imageNamed:@"check.png"];
 }
 
 - (void)viewDidUnload
 {
     [self setActiveGroupsEditButton:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -68,51 +64,58 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return (section) ? self.myGroups.count : 1;
-    NSLog(@"Size of MyGroups Section - %@",self.myGroups.count);
+    if (!section) {
+        return 1;
+    } else if (section == 1) {
+        return [[ClientSessionManager activeGroupsForCurrentUser] count];
+    } else {
+        return [self.myGroups count];
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return (section) ? @"Active Groups" : nil;
+    if (!section) {
+        return nil;
+    } else if (section == 1) {
+        return @"Active Groups";
+    } else {
+        return @"My Groups";
+    }
 }
 
-#define CREATE_GROUP_CELL_IDENTIFIER @"Console_CreateGroupCell"
-#define GROUP_CELL_IDENTIFIER @"Console_GroupCell"
+#define CREATE_GROUP_CELL_IDENTIFIER        @"Console_CreateGroupCell"
+#define GROUP_CELL_IDENTIFIER               @"Console_GroupCell"
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifier;
     UITableViewCell *cell;
-    if (indexPath.section) {
-        Group *group = [self.myGroups objectAtIndex:indexPath.row];
-        cellIdentifier = GROUP_CELL_IDENTIFIER;
-        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        NSLog(@"cell exists - %@", cell);
-        cell.textLabel.text = [group name];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d online members", group.members.count]; //TODO - Not accurate. ONLY FOR DEMO
-        if ([[ClientSessionManager activeGroupsForCurrentUser] containsObject:group]) {
-            cell.imageView.image = self.activeGroupIndictor;
-        }
-    } else {
+    
+    if (!indexPath.section) {
         cellIdentifier = CREATE_GROUP_CELL_IDENTIFIER;
         cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    } else {
+        Group *group;
+        cellIdentifier = GROUP_CELL_IDENTIFIER;
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (indexPath.section == 1) {
+            group = [[ClientSessionManager activeGroupsForCurrentUser] objectAtIndex:indexPath.row];
+        } else {
+            group = [self.myGroups objectAtIndex:indexPath.row];
+        }
+        cell.textLabel.text = [group name];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d online members", group.members.count]; //TODO - Not accurate. ONLY FOR DEMO    
     }
-
     return cell;
 }
 
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return (indexPath.section) ? YES : NO;
-}
 
 #pragma mark - Table view delegate
 
@@ -127,15 +130,16 @@
     if (indexPath.section) {
         if (self.activeGroupsEditingMode) {
             [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
-            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            if (cell.imageView.image) {
-                cell.imageView.image = nil;
-                // Reflect selection in data model
-                [ClientSessionManager removeFromActiveGroups:[self.myGroups objectAtIndex:indexPath.row]];
+            if (indexPath.section == 1) {
+                Group *group  = [[ClientSessionManager activeGroupsForCurrentUser]objectAtIndex:indexPath.row];
+                [ClientSessionManager removeFromActiveGroups:group];
+                [self.myGroups addObject:group];
             } else {
-                cell.imageView.image = self.activeGroupIndictor;
-                [ClientSessionManager addToActiveGroups:[self.myGroups objectAtIndex:indexPath.row]];
+                Group *group  = [self.myGroups objectAtIndex:indexPath.row];
+                [self.myGroups removeObject:group];
+                [ClientSessionManager addToActiveGroups:group];
             }
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)] withRowAnimation:UITableViewRowAnimationAutomatic];
         } else {
             //transition to group description
         }

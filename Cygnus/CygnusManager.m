@@ -53,17 +53,16 @@ static UIManagedDocument*_simulation;
         [Group groupFromPlistData:group inManagedObjectContext:sim.managedObjectContext];
     }
     
-   NSArray *activePublicGroupAndMapDefault = [NSArray arrayWithObject:[NSNumber numberWithInt:0]];
+   //NSArray *activePublicGroupAndMapDefault = [NSArray arrayWithObject:[NSNumber numberWithInt:0]];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    [defaults setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_GROUPS];
-    [defaults setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_MAPS];
+    //[defaults setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_GROUPS];
+    //[defaults setObject:activePublicGroupAndMapDefault forKey:CURRENT_USER_ACTIVE_MAPS];
     [defaults setObject:[NSNumber numberWithInt:0] forKey:CURRENT_USER_MAP_PREFERENCE];
     [defaults setObject:[NSNumber numberWithInt:1] forKey:CURRENT_USER_BEACON_ENABLED];
-    [defaults setObject:[NSNumber numberWithInt:30] forKey:CURRENT_USER_BEACON_FREQUENCY];
+    [defaults setObject:[NSNumber numberWithInt:5*60] forKey:CURRENT_USER_BEACON_FREQUENCY];
     [defaults setObject:[NSNumber numberWithInt:10000] forKey:CURRENT_USER_BEACON_RANGE];
     [defaults synchronize];
-    
 }
 
 
@@ -101,8 +100,6 @@ static UIManagedDocument*_simulation;
     while (!documentReady) {
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }
-    
-    
 }
 
 
@@ -111,9 +108,9 @@ static UIManagedDocument*_simulation;
     NSUserDefaults *defaults =  [NSUserDefaults standardUserDefaults];
     
     NSMutableArray *groupIds = [NSMutableArray array];
-        for (Group *group in [ClientSessionManager activeGroupsForCurrentUser]) {
-            [groupIds addObject: group.uid];
-        }
+    for (Group *group in [ClientSessionManager activeGroupsForCurrentUser]) {
+        [groupIds addObject: group.uid];
+    }
     NSMutableArray *mapIds = [NSMutableArray array];
     for (Map *map in [ClientSessionManager activeMapsForCurrentUser]) {
         [mapIds addObject: map.uid];
@@ -121,31 +118,10 @@ static UIManagedDocument*_simulation;
     
     [defaults setObject:groupIds forKey:CURRENT_USER_ACTIVE_GROUPS];
     [defaults setObject:mapIds forKey:CURRENT_USER_ACTIVE_MAPS];
+    
+
+    [defaults synchronize];
 }
 
-
-
-
-+ (NSArray*)mapPinsForUser:(Person*)user
-{
-    NSManagedObjectContext *context = [[CygnusManager simulation] managedObjectContext]; 
-    NSArray *matches = nil;
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"MapPin"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"location_name" ascending:YES]];
-    
-    //TODO
-    //get USER settings on which maps to query and formulate predicate
-    //request.predicate = [NSPredicate predicateWithFormat:@"uid = %@", [pinInfo objectForKey:@"uid"]];
-    request.predicate = nil;
-    
-    NSError *error;
-    matches = [context executeFetchRequest:request error:&error];
-    
-    if (!matches || ![matches count]) {
-        // handle error
-    }
-    return matches;
-}
 
 @end

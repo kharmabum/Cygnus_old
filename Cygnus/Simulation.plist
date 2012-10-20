@@ -8,7 +8,7 @@
 			<key>imgURL</key>
 			<string>https://sphotos.xx.fbcdn.net/hphotos-ash4/426465_2661677109916_792914287_n.jpg</string>
 			<key>broadcastRange</key>
-			<integer>50</integer>
+			<integer>15000</integer>
 			<key>longitude</key>
 			<real>-122.172706</real>
 			<key>beaconActive</key>
@@ -34,7 +34,7 @@
 			<key>imgURL</key>
 			<string>https://sphotos.xx.fbcdn.net/hphotos-ash3/548318_1572551948063_2046214876_n.jpg</string>
 			<key>broadcastRange</key>
-			<integer>50</integer>
+			<integer>1000</integer>
 			<key>beaconActive</key>
 			<true/>
 			<key>longitude</key>
@@ -60,7 +60,7 @@
 			<key>imgURL</key>
 			<string>https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc7/299073_1718432200323_1065679383_n.jpg</string>
 			<key>broadcastRange</key>
-			<integer>50</integer>
+			<integer>5000</integer>
 			<key>beaconActive</key>
 			<true/>
 			<key>longitude</key>
@@ -88,7 +88,7 @@
 			<key>imgURL</key>
 			<string>https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc7/310909_2065735883338_2125101616_n.jpg</string>
 			<key>broadcastRange</key>
-			<integer>50</integer>
+			<integer>10000</integer>
 			<key>beaconActive</key>
 			<true/>
 			<key>longitude</key>
@@ -114,7 +114,7 @@
 		</dict>
 		<dict>
 			<key>broadcastRange</key>
-			<integer>50</integer>
+			<integer>1000</integer>
 			<key>imgURL</key>
 			<string>https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc7/314321_10150369372494437_1537126887_n.jpg</string>
 			<key>beaconActive</key>
@@ -171,18 +171,6 @@
 	<array>
 		<dict>
 			<key>mapPins</key>
-			<array/>
-			<key>uid</key>
-			<integer>0</integer>
-			<key>mapType</key>
-			<integer>0</integer>
-			<key>name</key>
-			<string>Public</string>
-			<key>summary</key>
-			<string>Open to everyone.</string>
-		</dict>
-		<dict>
-			<key>mapPins</key>
 			<array>
 				<dict>
 					<key>uid</key>
@@ -236,18 +224,6 @@
 			<string>Stanford - Class of 2016</string>
 			<key>summary</key>
 			<string>Stanford - Class of 2016, primary map description</string>
-		</dict>
-		<dict>
-			<key>mapPins</key>
-			<array/>
-			<key>uid</key>
-			<integer>3</integer>
-			<key>mapType</key>
-			<integer>1</integer>
-			<key>name</key>
-			<string>Farm Survival Guide</string>
-			<key>summary</key>
-			<string>The Essentials</string>
 		</dict>
 		<dict>
 			<key>mapPins</key>
@@ -408,15 +384,376 @@
 		</dict>
 		<dict>
 			<key>mapPins</key>
-			<array/>
+			<array>
+				<dict>
+					<key>uid</key>
+					<integer>8</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string>http://ilikeikesplace.com/images/logo_without_rays.png?1336106386</string>
+					<key>longitude</key>
+					<real>-122.174191</real>
+					<key>location_name</key>
+					<string>Ike&apos;s Place</string>
+					<key>latitude</key>
+					<real>37.428141</real>
+					<key>summary</key>
+					<string>Best Sandwiches Around. Try the &quot;Menage A Trois&quot; on Dutch Crunch. Come in the afternoon to avoid the lunch line.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>9</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string>http://www.coupacafe.com/images/logo2.gif</string>
+					<key>longitude</key>
+					<real>-122.174304</real>
+					<key>location_name</key>
+					<string>Coupa Cafe: Huang</string>
+					<key>latitude</key>
+					<real>37.428081</real>
+					<key>summary</key>
+					<string>For when you need a snack, a study break, or good coffee.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>10</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string>http://www.coupacafe.com/images/logo2.gif</string>
+					<key>longitude</key>
+					<real>-122.175613</real>
+					<key>location_name</key>
+					<string>Coupa Cafe: Y2E2</string>
+					<key>latitude</key>
+					<real>37.428328</real>
+					<key>summary</key>
+					<string>For when you need a snack, a study break, or good coffee.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>11</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string>http://www.coupacafe.com/images/logo2.gif</string>
+					<key>longitude</key>
+					<real>-122.166933</real>
+					<key>location_name</key>
+					<string>Coupa Cafe: Green Library</string>
+					<key>latitude</key>
+					<real>37.426194</real>
+					<key>summary</key>
+					<string>For when you need a snack, a study break, or good coffee.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>12</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.17366</real>
+					<key>location_name</key>
+					<string>Bytes Cafe</string>
+					<key>latitude</key>
+					<real>37.429334</real>
+					<key>summary</key>
+					<string>Great lunch spot. Professors and grad student&apos;s love this place.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>13</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.174594</real>
+					<key>location_name</key>
+					<string>Nexus Cafe</string>
+					<key>latitude</key>
+					<real>37.430974</real>
+					<key>summary</key>
+					<string>First Floor. Features Burger,Pizza,Pasta,Mexican, and Salad stations in addition to a great salad and sandwich bar.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>14</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.174213</real>
+					<key>location_name</key>
+					<string>Peet&apos;s Coffee</string>
+					<key>latitude</key>
+					<real>37.430829</real>
+					<key>summary</key>
+					<string>Third Floor. Good coffee, pastries, and snacks.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>15</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.171166</real>
+					<key>location_name</key>
+					<string>Cool Cafe</string>
+					<key>latitude</key>
+					<real>37.432626</real>
+					<key>summary</key>
+					<string>Cantor Arts Center Cafe, featuring lots of great organic products.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>16</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.16882</real>
+					<key>location_name</key>
+					<string>Olives Cafe</string>
+					<key>latitude</key>
+					<real>37.428173</real>
+					<key>summary</key>
+					<string>In the basement, has outdoor courtyard. Mediterranean Food.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>17</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.16882</real>
+					<key>location_name</key>
+					<string>Olives Cafe</string>
+					<key>latitude</key>
+					<real>37.428173</real>
+					<key>summary</key>
+					<string>In the basement, has outdoor courtyard. Mediterranean Food.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>18</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.17075</real>
+					<key>location_name</key>
+					<string>CoHo</string>
+					<key>latitude</key>
+					<real>37.424128</real>
+					<key>summary</key>
+					<string>Stanford&apos;s very own coffee house.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>19</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.171171</real>
+					<key>location_name</key>
+					<string>Treehouse</string>
+					<key>latitude</key>
+					<real>37.423972</real>
+					<key>summary</key>
+					<string>Pizza/Mexican/Asian food. Mostly known for their pitchers of Beer.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>20</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.170638</real>
+					<key>location_name</key>
+					<string>Fraiche</string>
+					<key>latitude</key>
+					<real>37.424648</real>
+					<key>summary</key>
+					<string>Organic Froyo.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>21</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.171005</real>
+					<key>location_name</key>
+					<string>Panda Express</string>
+					<key>latitude</key>
+					<real>37.424481</real>
+					<key>summary</key>
+					<string>High-caloric. Delicious. Asian? Take Cardinal Dollars</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>22</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.170774</real>
+					<key>location_name</key>
+					<string>Subway</string>
+					<key>latitude</key>
+					<real>37.424413</real>
+					<key>summary</key>
+					<string>Eat Fresh.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>23</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.170705</real>
+					<key>location_name</key>
+					<string>The Axe and Palm</string>
+					<key>latitude</key>
+					<real>37.425078</real>
+					<key>summary</key>
+					<string>Traditional Stanford Study Food.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>24</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.158389</real>
+					<key>location_name</key>
+					<string>Ray&apos;s</string>
+					<key>latitude</key>
+					<real>37.423502</real>
+					<key>summary</key>
+					<string>Same owner as CoHo, great place to watch a game.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>25</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.161966</real>
+					<key>location_name</key>
+					<string>Jimmy V&apos;s</string>
+					<key>latitude</key>
+					<real>37.429983</real>
+					<key>summary</key>
+					<string>Athlete Cafe, make sure you check hours.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>26</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.167202</real>
+					<key>location_name</key>
+					<string>Russo Cafe</string>
+					<key>latitude</key>
+					<real>37.422948</real>
+					<key>summary</key>
+					<string>Grad Student Cafe, great food.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+				<dict>
+					<key>uid</key>
+					<integer>27</integer>
+					<key>expiration</key>
+					<date>1991-06-07T10:00:00Z</date>
+					<key>imgURL</key>
+					<string></string>
+					<key>longitude</key>
+					<real>-122.171067</real>
+					<key>location_name</key>
+					<string>Thai Cafe</string>
+					<key>latitude</key>
+					<real>37.428569</real>
+					<key>summary</key>
+					<string>Cash-only, tasty, and cheap thai food. Open for lunch only.</string>
+					<key>events</key>
+					<array/>
+				</dict>
+			</array>
 			<key>uid</key>
 			<integer>8</integer>
 			<key>mapType</key>
 			<integer>1</integer>
 			<key>name</key>
-			<string>Campus Food Spots</string>
+			<string>Places To Eat on Campus</string>
 			<key>summary</key>
-			<string>Every site on campus where calories are for sale.</string>
+			<string>Hungry? Here are all the places on campus you can go get food besides for dining halls.</string>
 		</dict>
 		<dict>
 			<key>mapPins</key>
@@ -454,35 +791,9 @@
 			<key>summary</key>
 			<string>Visualization of the Caltrain schedule.</string>
 		</dict>
-		<dict>
-			<key>mapPins</key>
-			<array/>
-			<key>uid</key>
-			<integer>12</integer>
-			<key>mapType</key>
-			<integer>1</integer>
-			<key>name</key>
-			<string>Fruit Trees</string>
-			<key>summary</key>
-			<string>Fresh farm fruit.</string>
-		</dict>
 	</array>
 	<key>Groups</key>
 	<array>
-		<dict>
-			<key>uid</key>
-			<integer>0</integer>
-			<key>name</key>
-			<string>Public</string>
-			<key>groupMap</key>
-			<integer>0</integer>
-			<key>summary</key>
-			<string>Open to everyone.</string>
-			<key>sharedMaps</key>
-			<array/>
-			<key>members</key>
-			<array/>
-		</dict>
 		<dict>
 			<key>uid</key>
 			<integer>1</integer>
@@ -513,7 +824,6 @@
 			<string>Guinea Pigs.</string>
 			<key>sharedMaps</key>
 			<array>
-				<integer>3</integer>
 				<integer>4</integer>
 				<integer>5</integer>
 				<integer>6</integer>
@@ -522,7 +832,6 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
-				<integer>12</integer>
 			</array>
 			<key>members</key>
 			<array>

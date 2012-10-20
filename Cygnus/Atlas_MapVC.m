@@ -14,6 +14,7 @@
 #import "CygnusAnnotation.h"
 #import "CygnusBeaconAnnotation.h"
 #import "Atlas_LoginVC.h"
+#import <Parse/Parse.h>
 
 @interface Atlas_MapVC () <MKMapViewDelegate, CLLocationManagerDelegate, LoginViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -88,7 +89,7 @@
         if ([ClientSessionManager updateRequired]) {
             [self.mapView removeAnnotations:self.mapView.annotations];
         }
-        NSSet *mapPins = [ClientSessionManager mapPinsForCurrentUser];
+        NSOrderedSet *mapPins = [ClientSessionManager mapPinsForCurrentUser];
         for (MapPin *mapPin in mapPins) {
             //NSLog(@"mapPin for current user - %@", mapPin);
             CygnusAnnotation *mpa = [[CygnusAnnotation alloc] init];
@@ -134,6 +135,10 @@
     self.beaconManager.distanceFilter = kCLDistanceFilterNone;
     [self initMapPinIcons];
     [self setBeacon];  
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    [testObject setObject:@"bar" forKey:@"foo"];
+    [testObject save];
 }
 
 - (void)viewDidUnload
@@ -171,7 +176,8 @@
 {
     CygnusBeaconAnnotation *beacon = [[CygnusBeaconAnnotation alloc] init];
     beacon.person = [ClientSessionManager currentUser];
-    self.currentUserBeacon = beacon;  
+    self.currentUserBeacon = beacon; 
+
     int beaconFrequency;
     if ((beaconFrequency = [ClientSessionManager currentUserBeaconFrequency])) {
         [self.beaconManager startUpdatingLocation];

@@ -33,7 +33,7 @@
         person.latitude = [personInfo objectForKey:@"latitude"];
         person.longitude = [personInfo objectForKey:@"longitude"];
         person.beaconActive = [personInfo objectForKey:@"beaconActive"];
-        person.broadcastRange = [personInfo objectForKey:@"broadCastRange"];
+        person.broadcastRange = [personInfo objectForKey:@"broadcastRange"];
         NSArray *privateMaps = [personInfo objectForKey:@"privateMaps"];
         for (NSNumber *mapUID in privateMaps) {
             PrivateMap *map = [PrivateMap privateMapFromUID:mapUID inManagedObjectContext:context];

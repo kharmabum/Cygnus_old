@@ -28,10 +28,10 @@
 
 // contain NSManagedObjects
 
-+ (NSSet *)mapPinsForCurrentUser;
-+ (NSSet *)activeGroupsForCurrentUser;
-+ (NSSet *)activeMapsForCurrentUser;
-+ (NSSet *)availableMapsForCurrentUser;
++ (NSOrderedSet *)mapPinsForCurrentUser;
++ (NSOrderedSet *)activeGroupsForCurrentUser;
++ (NSOrderedSet *)activeMapsForCurrentUser;
++ (NSOrderedSet *)availableMapsForCurrentUser;
 
 
 + (void)addToActiveGroups:(Group*)group;

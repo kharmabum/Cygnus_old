@@ -11,60 +11,68 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface Atlas_EntityListTVC ()
-@property (strong, nonatomic) NSArray *activeMapPins;
+@property (strong, nonatomic) NSOrderedSet *activeMapPins;
 @property (strong, nonatomic) NSMutableArray *nearbyActors;
+@property (strong, nonatomic) NSMutableArray *actorDistances;
+
 
 @end
 
 @implementation Atlas_EntityListTVC
 @synthesize activeMapPins = _activeMapPins;
 @synthesize nearbyActors = _nearbyActors;
+@synthesize actorDistances = _actorDistances;
 
+- (NSMutableArray*)nearbyActors
+{
+    if (!_nearbyActors) _nearbyActors = [NSMutableArray array];
+    return _nearbyActors;
+}
+
+- (NSMutableArray*)actorDistances
+{
+    if (!_actorDistances) _actorDistances = [NSMutableArray array];
+    return _actorDistances;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     Person *currentUser = [ClientSessionManager currentUser];
-    self.activeMapPins = [[ClientSessionManager mapPinsForCurrentUser] allObjects];
-    self.nearbyActors = [NSMutableArray array];
+    self.activeMapPins = [ClientSessionManager mapPinsForCurrentUser];                            
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+
     
-    NSLog(@"size of activePins - %d", self.activeMapPins.count);
     CLLocation *currentUserLocation = [[CLLocation alloc] initWithLatitude:[[currentUser latitude] doubleValue] longitude:[[currentUser latitude] doubleValue]];
-    
-    
     dispatch_queue_t detectNearbyActors = dispatch_queue_create("detect_nearby_actors", NULL);
     dispatch_async(detectNearbyActors, ^{
         for (Group *group in [ClientSessionManager activeGroupsForCurrentUser]) {
             for (Person *member in group.members) {
-                if (member != currentUser) {
+                if (member != currentUser && ![self.nearbyActors containsObject:member]) {
                     CLLocation *memberLocation = [[CLLocation alloc] initWithLatitude:[[member latitude] doubleValue] 
                                                                             longitude:[[member latitude] doubleValue]];
                     CLLocationDistance distance = [currentUserLocation distanceFromLocation:memberLocation];
-                    if (distance < [currentUser.broadcastRange intValue] && distance < [member.broadcastRange intValue]) {
-                        NSArray *actorData = [NSArray arrayWithObjects:member, distance, nil];
-                        NSLog(@"in the deep - %@", actorData);
-
-                        [self.nearbyActors addObject:actorData];
+                    if (distance <= [currentUser.broadcastRange intValue] && distance <= [member.broadcastRange intValue]) {
+                        [self.nearbyActors addObject:member];
+                        [self.actorDistances addObject:[NSNumber numberWithDouble:distance]];
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
+                            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
                         });
                     }
                 }
             }
         }
     });
-    dispatch_release(detectNearbyActors);
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -79,17 +87,10 @@
     return 2;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger number = (!section) ? self.nearbyActors.count : self.activeMapPins.count;
-    NSLog(@"number of rows in section %d - %d", section, number);
-    NSLog(@"%@",self.activeMapPins);
-    NSLog(@"%@",[ClientSessionManager mapPinsForCurrentUser]);
-
-    return number;
+    return (!section) ? [self.nearbyActors count] : [self.activeMapPins count];
 }
-
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -105,23 +106,22 @@
     NSString *cellIdentifier;
     UITableViewCell *cell;
 
-    NSURL *imgURL;
+    //NSURL *imgURL;
     if (!indexPath.section) {
         cellIdentifier = ATLAS_LIST_PERSON_CELL_IDENTIFIER;
         cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        NSArray *actorData = [self.nearbyActors objectAtIndex:indexPath.row];
-        Person *person = [actorData objectAtIndex:0];
+        Person *person = [self.nearbyActors objectAtIndex:indexPath.row];
         NSString *sharedGroupList = @"";
         NSMutableSet *sharedGroups = [NSMutableSet setWithSet:[[ClientSessionManager currentUser] groups]];
         [sharedGroups intersectsSet:person.groups];
         for (Group *group in sharedGroups) {
             NSString *format = ([sharedGroupList length]) ? @", %@": @"%@";
-            [sharedGroupList stringByAppendingFormat:format, group.name];
+            sharedGroupList = [sharedGroupList stringByAppendingFormat:format, group.name];
         }
         
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",person.first_name, person.last_name];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %f km", sharedGroupList, [actorData objectAtIndex:1]];
-        imgURL = [NSURL URLWithString:person.imgURL];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%1.2f km", [[self.actorDistances objectAtIndex:indexPath.row] doubleValue]];
+        //imgURL = [NSURL URLWithString:person.imgURL];
     } else {
         cellIdentifier = ATLAS_LIST_LOCATION_CELL_IDENTIFIER;
         cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -129,27 +129,37 @@
         MapPin *pin = [self.activeMapPins objectAtIndex:indexPath.row];
         //TODO - implement party notifier to inform attendence count, also add # of events on location label
         cell.textLabel.text = pin.location_name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", pin.map.name];
-        imgURL = [NSURL URLWithString:pin.imgURL];
+        
+        
+        
+        Person *currentUser = [ClientSessionManager currentUser];
+        CLLocation *currentUserLocation = [[CLLocation alloc] initWithLatitude:[[currentUser latitude] doubleValue] longitude:[[currentUser latitude] doubleValue]];
+        CLLocation *pinLocation = [[CLLocation alloc] initWithLatitude:[[pin latitude] doubleValue] 
+                                                                longitude:[[pin latitude] doubleValue]];
+        CLLocationDistance distance = [currentUserLocation distanceFromLocation:pinLocation];
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%1.2f km", distance];
+        
+        
+        
+        //imgURL = [NSURL URLWithString:pin.imgURL];
     }
     
-    cell.imageView.hidden = NO;
-    
+    /*
+    cell.imageView.frame = CGRectMake(0, 0, 45, 45);
     dispatch_queue_t tableCellImageFetcher = dispatch_queue_create("table_cell_image_fetcher", NULL);
     dispatch_async(tableCellImageFetcher, ^{
         NSData *imageData = [NSData dataWithContentsOfURL:imgURL];
         if (imageData) {
             UIImage *image = [UIImage imageWithData:imageData];
             dispatch_async(dispatch_get_main_queue(), ^{
-                if ([self.tableView.visibleCells containsObject:cell]) {
-                    cell.imageView.image = image;
-                    cell.imageView.frame = CGRectMake(0, 0, 45, 45);
-                    [cell setNeedsDisplay];
+                if ([self.tableView.indexPathsForVisibleRows containsObject:indexPath]) {
+                    cell.imageView.image = cell.imageView.highlightedImage = image;
                 }
             });
         }
     });
-    dispatch_release(tableCellImageFetcher);
+    dispatch_release(tableCellImageFetcher);*/
     return cell;
 }
 

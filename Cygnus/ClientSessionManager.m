@@ -12,9 +12,9 @@
 @implementation ClientSessionManager
 
 static Person *_currentUser; 
-static NSMutableSet *_mapPinsForCurrentUser; 
-static NSMutableSet *_activeGroupsForCurrentUser; 
-static NSMutableSet *_activeMapsForCurrentUser; 
+static NSMutableOrderedSet *_mapPinsForCurrentUser; 
+static NSMutableOrderedSet *_activeGroupsForCurrentUser; 
+static NSMutableOrderedSet *_activeMapsForCurrentUser; 
 static BOOL updateRequired = NO;
 
 + (void)indicateNeedForUpdate:(BOOL)updateNeeded
@@ -84,11 +84,11 @@ static BOOL updateRequired = NO;
 
 //contain NSManagedObjects
 
-+ (NSSet *)mapPinsForCurrentUser
++ (NSMutableOrderedSet*)mapPinsForCurrentUser
 {
     if (!_mapPinsForCurrentUser) {
-        _mapPinsForCurrentUser = [NSMutableSet set];
-        NSSet *activeMaps = [ClientSessionManager activeMapsForCurrentUser];
+        _mapPinsForCurrentUser = [[NSMutableOrderedSet alloc] init];
+        NSOrderedSet *activeMaps = [ClientSessionManager activeMapsForCurrentUser];
         for (Map *map in activeMaps) {
             [_mapPinsForCurrentUser unionSet:[map mapPins]];
         }
@@ -96,12 +96,13 @@ static BOOL updateRequired = NO;
     return _mapPinsForCurrentUser; 
 }
 
-+ (NSSet *)activeGroupsForCurrentUser
++ (NSMutableOrderedSet*)activeGroupsForCurrentUser
 {
     if (!_activeGroupsForCurrentUser) {
-        _activeGroupsForCurrentUser = [NSMutableSet set];
+        _activeGroupsForCurrentUser = [[NSMutableOrderedSet alloc]init];
         
         NSArray *groupIds = [[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_USER_ACTIVE_GROUPS];
+
         if (groupIds) {
             for (NSNumber *groupid in groupIds) {
                 [_activeGroupsForCurrentUser addObject:[Group groupFromUID:groupid inManagedObjectContext:[[CygnusManager simulation] managedObjectContext]]];
@@ -111,12 +112,13 @@ static BOOL updateRequired = NO;
     return _activeGroupsForCurrentUser;
 }
 
-+ (NSSet*)activeMapsForCurrentUser
++ (NSMutableOrderedSet*)activeMapsForCurrentUser
 {
     if (!_activeMapsForCurrentUser) {
-        _activeMapsForCurrentUser = [NSMutableSet set];
+        _activeMapsForCurrentUser = [[NSMutableOrderedSet alloc]init];
         
         NSArray *mapIds = [[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_USER_ACTIVE_MAPS];
+
         if (mapIds) {
             for (NSNumber *mapId in mapIds) {
                 [_activeMapsForCurrentUser addObject:[Map mapFromUID:mapId inManagedObjectContext:[[CygnusManager simulation] managedObjectContext]]];
@@ -126,18 +128,16 @@ static BOOL updateRequired = NO;
     return _activeMapsForCurrentUser;
 }
 
-+ (NSSet*)availableMapsForCurrentUser
++ (NSMutableOrderedSet*)availableMapsForCurrentUser
 {
     NSSet *groups = [[ClientSessionManager currentUser] groups];
-    NSMutableSet *maps = [NSMutableSet set];
+    NSMutableOrderedSet *maps = [[NSMutableOrderedSet alloc] init];
     for (Group *group in groups) {
         [maps unionSet:group.sharedMaps];
         [maps addObject:group.groupMap];
     }
     return maps;
 }
-
-
 
 + (void)addToActiveGroups:(Group*)group
 {

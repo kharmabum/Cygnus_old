@@ -8,6 +8,7 @@
 
 #import "CygnusAppDelegate.h"
 #import "CygnusManager.h"
+#import <Parse/Parse.h>
 
 @implementation CygnusAppDelegate
 
@@ -17,6 +18,9 @@
 {
     // Override point for customization after application launch.
     [CygnusManager loadSimulation];
+    
+    [Parse setApplicationId:@"AfTRIqcyTQmwsarBJf9yRrplGlz8ynMBlV4hiPJe"
+                  clientKey:@"HKFnardQ7EAeBxSPBIsdpd338kQLGcUhBHKvya7S"];
     return YES;
 }
 							
@@ -48,6 +52,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [CygnusManager saveUserSettings];
+
 }
 
 @end

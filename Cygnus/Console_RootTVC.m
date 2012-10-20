@@ -8,11 +8,38 @@
 
 #import "Console_RootTVC.h"
 #import "CygnusManager.h"
+#import "ClientSessionManager.h"
 
 @interface Console_RootTVC ()
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentedControl;
+@property (weak, nonatomic) IBOutlet UIImageView *beaconImageView;
+
 @end
 
 @implementation Console_RootTVC
+@synthesize mapTypeSegmentedControl = _mapTypeSegmentedControl;
+@synthesize beaconImageView = _beaconImageView;
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.mapTypeSegmentedControl.selectedSegmentIndex = [ClientSessionManager currentUserMapPreference];;
+    
+    if (![ClientSessionManager currentUserBeaconEnabled]) {
+        self.beaconImageView.image = [UIImage imageNamed:@"beaconInactive.png"];
+    } else if (![ClientSessionManager currentUserBeaconFrequency]) {
+        self.beaconImageView.image = [UIImage imageNamed:@"beaconActive.png"];
+    } else {
+        self.beaconImageView.image = [UIImage imageNamed:@"beaconFollow.png"];
+    }
+    [super viewWillAppear:animated];
+}
+
+- (IBAction)mapTypeSelected:(UISegmentedControl *)sender 
+{
+    [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:sender.selectedSegmentIndex]forKey:CURRENT_USER_MAP_PREFERENCE];
+}
+
 
 - (void)viewDidLoad
 {
@@ -21,6 +48,7 @@
 
 - (void)viewDidUnload
 {
+    [self setBeaconImageView:nil];
     [super viewDidUnload];
 }
 
